@@ -14,6 +14,10 @@
 		3D013E4E2181BC2B00D1F063 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E4D2181BC2B00D1F063 /* UIViewController+Extension.swift */; };
 		3D013E502181C7E300D1F063 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E4F2181C7E300D1F063 /* BaseTableViewController.swift */; };
 		3D013E522181C8B600D1F063 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E512181C8B600D1F063 /* BaseCollectionViewController.swift */; };
+		3D013E9921821D5A00D1F063 /* PropertyChangable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E9821821D5A00D1F063 /* PropertyChangable.swift */; };
+		3D013E9B21821D9900D1F063 /* ObservableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E9A21821D9900D1F063 /* ObservableList.swift */; };
+		3D013E9D21821E6D00D1F063 /* UITableView+PropertyChangable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E9C21821E6D00D1F063 /* UITableView+PropertyChangable.swift */; };
+		3D013E9F21821EA600D1F063 /* UICollectionView+PropertyChangable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E9E21821EA600D1F063 /* UICollectionView+PropertyChangable.swift */; };
 		3D0701C62180B13400467028 /* MVI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0701BC2180B13400467028 /* MVI.framework */; };
 		3D0701CB2180B13400467028 /* MVITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0701CA2180B13400467028 /* MVITests.swift */; };
 		3D0701CD2180B13400467028 /* MVI.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D0701BF2180B13400467028 /* MVI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -57,6 +61,10 @@
 		3D013E4D2181BC2B00D1F063 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		3D013E4F2181C7E300D1F063 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		3D013E512181C8B600D1F063 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
+		3D013E9821821D5A00D1F063 /* PropertyChangable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyChangable.swift; sourceTree = "<group>"; };
+		3D013E9A21821D9900D1F063 /* ObservableList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableList.swift; sourceTree = "<group>"; };
+		3D013E9C21821E6D00D1F063 /* UITableView+PropertyChangable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+PropertyChangable.swift"; sourceTree = "<group>"; };
+		3D013E9E21821EA600D1F063 /* UICollectionView+PropertyChangable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+PropertyChangable.swift"; sourceTree = "<group>"; };
 		3D0701BC2180B13400467028 /* MVI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MVI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D0701BF2180B13400467028 /* MVI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVI.h; sourceTree = "<group>"; };
 		3D0701C02180B13400467028 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -174,6 +182,8 @@
 				3D9B8D8B2180B83C00DF7C6B /* ViewModel.swift */,
 				3D9B8D8D2180B8D400DF7C6B /* Model.swift */,
 				3DD898E521818BB000DBBF1B /* Injectable.swift */,
+				3D013E9821821D5A00D1F063 /* PropertyChangable.swift */,
+				3D013E9A21821D9900D1F063 /* ObservableList.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -193,6 +203,8 @@
 				3DD898E121818A8D00DBBF1B /* String+Extension.swift */,
 				3D013E482181B0E500D1F063 /* DisposeBag+Extension.swift */,
 				3D013E4D2181BC2B00D1F063 /* UIViewController+Extension.swift */,
+				3D013E9C21821E6D00D1F063 /* UITableView+PropertyChangable.swift */,
+				3D013E9E21821EA600D1F063 /* UICollectionView+PropertyChangable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -422,14 +434,18 @@
 				3D9B8D9D2180BF9800DF7C6B /* Requestable.swift in Sources */,
 				3D9B8D862180B55300DF7C6B /* SyncState.swift in Sources */,
 				3D013E472181ADD300D1F063 /* BaseViewController.swift in Sources */,
+				3D013E9921821D5A00D1F063 /* PropertyChangable.swift in Sources */,
 				3D013E4E2181BC2B00D1F063 /* UIViewController+Extension.swift in Sources */,
 				3D9B8D822180B33E00DF7C6B /* Event.swift in Sources */,
 				3D9B8D902180B97C00DF7C6B /* Observable+Event.swift in Sources */,
+				3D013E9D21821E6D00D1F063 /* UITableView+PropertyChangable.swift in Sources */,
+				3D013E9F21821EA600D1F063 /* UICollectionView+PropertyChangable.swift in Sources */,
 				3D9B8D8A2180B75000DF7C6B /* View.swift in Sources */,
 				3D9B8D802180B21800DF7C6B /* Intent.swift in Sources */,
 				3D9B8D982180BB6500DF7C6B /* Observable+Extension.swift in Sources */,
 				3DD898E221818A8D00DBBF1B /* String+Extension.swift in Sources */,
 				3D9B8D962180BA7700DF7C6B /* ReducerIntent+Extension.swift in Sources */,
+				3D013E9B21821D9900D1F063 /* ObservableList.swift in Sources */,
 				3DD898DC218186CF00DBBF1B /* UIColor+Extension.swift in Sources */,
 				3DD898E621818BB000DBBF1B /* Injectable.swift in Sources */,
 				3D9B8D9A2180BC4900DF7C6B /* DataRequest+Extension.swift in Sources */,
