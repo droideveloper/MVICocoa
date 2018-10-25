@@ -12,6 +12,8 @@
 		3D013E492181B0E500D1F063 /* DisposeBag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E482181B0E500D1F063 /* DisposeBag+Extension.swift */; };
 		3D013E4C2181B7D400D1F063 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E4B2181B7D400D1F063 /* BaseViewModel.swift */; };
 		3D013E4E2181BC2B00D1F063 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E4D2181BC2B00D1F063 /* UIViewController+Extension.swift */; };
+		3D013E502181C7E300D1F063 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E4F2181C7E300D1F063 /* BaseTableViewController.swift */; };
+		3D013E522181C8B600D1F063 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E512181C8B600D1F063 /* BaseCollectionViewController.swift */; };
 		3D0701C62180B13400467028 /* MVI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0701BC2180B13400467028 /* MVI.framework */; };
 		3D0701CB2180B13400467028 /* MVITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0701CA2180B13400467028 /* MVITests.swift */; };
 		3D0701CD2180B13400467028 /* MVI.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D0701BF2180B13400467028 /* MVI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -53,6 +55,8 @@
 		3D013E482181B0E500D1F063 /* DisposeBag+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DisposeBag+Extension.swift"; sourceTree = "<group>"; };
 		3D013E4B2181B7D400D1F063 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		3D013E4D2181BC2B00D1F063 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		3D013E4F2181C7E300D1F063 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		3D013E512181C8B600D1F063 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
 		3D0701BC2180B13400467028 /* MVI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MVI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D0701BF2180B13400467028 /* MVI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVI.h; sourceTree = "<group>"; };
 		3D0701C02180B13400467028 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 			children = (
 				3D013E462181ADD300D1F063 /* BaseViewController.swift */,
 				3D013E4B2181B7D400D1F063 /* BaseViewModel.swift */,
+				3D013E4F2181C7E300D1F063 /* BaseTableViewController.swift */,
+				3D013E512181C8B600D1F063 /* BaseCollectionViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -412,6 +418,7 @@
 				3D013E4C2181B7D400D1F063 /* BaseViewModel.swift in Sources */,
 				3DD898DE2181877300DBBF1B /* Int+Extension.swift in Sources */,
 				3DD898E021818A1600DBBF1B /* Int32+Extension.swift in Sources */,
+				3D013E522181C8B600D1F063 /* BaseCollectionViewController.swift in Sources */,
 				3D9B8D9D2180BF9800DF7C6B /* Requestable.swift in Sources */,
 				3D9B8D862180B55300DF7C6B /* SyncState.swift in Sources */,
 				3D013E472181ADD300D1F063 /* BaseViewController.swift in Sources */,
@@ -426,6 +433,7 @@
 				3DD898DC218186CF00DBBF1B /* UIColor+Extension.swift in Sources */,
 				3DD898E621818BB000DBBF1B /* Injectable.swift in Sources */,
 				3D9B8D9A2180BC4900DF7C6B /* DataRequest+Extension.swift in Sources */,
+				3D013E502181C7E300D1F063 /* BaseTableViewController.swift in Sources */,
 				3D9B8D922180BA2700DF7C6B /* Observable+Intent.swift in Sources */,
 				3D9B8D8C2180B83C00DF7C6B /* ViewModel.swift in Sources */,
 				3D9B8D842180B3DD00DF7C6B /* BusManager.swift in Sources */,
