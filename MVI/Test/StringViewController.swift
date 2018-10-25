@@ -11,4 +11,19 @@ import Foundation
 
 class StringViewController: BaseViewController<StringModel, StringViewModel> {
   
+  override func setUp() {
+    viewProgress = UIActivityIndicatorView(style: .whiteLarge)
+    viewProgress?.tintColor = UIColor.convert(0xFF0BCDEF)
+  }
+  
+  override func render(model: StringModel) {
+    if model.state is Idle {
+      // idle state
+    } else if model.state is Process {
+      // process state
+    } else if model.state is Failure {
+      // failure state
+      
+    }
+  }
 }

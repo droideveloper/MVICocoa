@@ -17,7 +17,7 @@ open class BaseViewController<T: Model, V: ViewModel>: UIViewController, View wh
   public typealias ViewModel = V
   public typealias Model = T
   
-  @IBOutlet private var viewProgress: UIActivityIndicatorView?
+  @IBOutlet var viewProgress: UIActivityIndicatorView?
   
   public lazy var viewModel: V = {
     if let viewModel = container?.resolve(V.self) {

@@ -20,4 +20,9 @@ extension UIViewController {
       return nil
     }
   }
+  
+  public func showError(_ error: Error, _ completion: (() -> Void)? = nil) {
+    let sheetDialog = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .actionSheet)
+    present(sheetDialog, animated: true, completion: completion)
+  }
 }
