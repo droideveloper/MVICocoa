@@ -13,7 +13,6 @@ class StringViewController: BaseViewController<StringModel, StringViewModel> {
   
   override func setUp() {
     viewProgress = UIActivityIndicatorView(style: .whiteLarge)
-    viewProgress?.tintColor = UIColor.convert(0xFF0BCDEF)
   }
   
   override func render(model: StringModel) {

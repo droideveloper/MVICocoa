@@ -10,19 +10,27 @@ import Foundation
 
 extension Int32 {
 	
-	public func toAlpha() -> Int {
-		return Int(self >> 24) & 0xFF
+   public var  alpha:  Int {
+    get {
+      return Int(self >> 24) & 0xFF
+    }
 	}
 	
-	public func toRed() -> Int {
-		return Int(self >> 16) & 0xFF
+  public var red: Int {
+    get {
+      return Int(self >> 16) & 0xFF
+    }
 	}
 	
-	public func toGreen() -> Int {
-		return Int(self >> 8) & 0xFF
+  public var green: Int {
+    get {
+      return Int(self >> 8) & 0xFF
+    }
 	}
 	
-	public func toBlue() -> Int {
-		return Int(self) & 0xFF
+  public var blue: Int {
+    get {
+      return Int(self) & 0xFF
+    }
 	}
 }

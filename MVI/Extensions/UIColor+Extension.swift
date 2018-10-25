@@ -11,11 +11,11 @@ import Foundation
 extension UIColor {
 	
 	public static func convert(_ hex: Int32) -> UIColor {
-		return convert(hex.toRed(), hex.toGreen(), hex.toBlue(), hex.toAlpha())
+		return convert(hex.red, hex.green, hex.blue, hex.alpha)
 	}
 	
 	public static func convert(_ hex: Int) -> UIColor {
-		return convert(hex.toRed(), hex.toGreen(), hex.toBlue())
+		return convert(hex.red, hex.green, hex.blue)
 	}
 	
 	public static func convert(_ red: Int, _ green: Int, _ blue: Int) -> UIColor {
@@ -23,9 +23,9 @@ extension UIColor {
 	}
 	
 	public static func convert(_ red: Int, _ green: Int, _ blue: Int, _ alpha: Int) -> UIColor {
-		return UIColor(red: red.toColorChannel(),
-									 green: green.toColorChannel(),
-									 blue: blue.toColorChannel(),
-									 alpha: alpha.toColorChannel())
+		return UIColor(red: red.colorChannel,
+									 green: green.colorChannel,
+									 blue: blue.colorChannel,
+									 alpha: alpha.colorChannel)
 	}	
 }

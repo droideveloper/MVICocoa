@@ -10,23 +10,33 @@ import Foundation
 
 extension Int {
 	
-	public func toColorChannel() -> CGFloat {
-		return CGFloat(self) / 255.0
+  public var colorChannel: CGFloat {
+    get {
+      return CGFloat(self) / 255.0
+    }
 	}
 	
-	public func toAlpha() -> Int {
-		return (self >> 24) & 0xFF
+  public var alpha: Int {
+    get {
+      return (self >> 24) & 0xFF
+    }
 	}
 	
-	public func toRed() -> Int {
-		return (self >> 16) & 0xFF
+  public var red: Int {
+    get {
+      return (self >> 16) & 0xFF
+    }
 	}
 	
-	public func toGreen() -> Int {
-		return (self >> 8) & 0xFF
+  public var green: Int {
+    get {
+      return (self >> 8) & 0xFF
+    }
 	}
 	
-	public func toBlue() -> Int {
-		return self & 0xFF
+  public var blue: Int {
+    get {
+      return self & 0xFF
+    }
 	}
 }

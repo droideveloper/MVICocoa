@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Swinject
+import Alamofire
 
 extension UIViewController {
   
@@ -23,6 +24,6 @@ extension UIViewController {
   
   public func showError(_ error: Error, _ completion: (() -> Void)? = nil) {
     let sheetDialog = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .actionSheet)
-    present(sheetDialog, animated: true, completion: completion)
+    self.present(sheetDialog, animated: true, completion: completion)
   }
 }
