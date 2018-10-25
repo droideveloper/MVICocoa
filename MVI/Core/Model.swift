@@ -10,4 +10,9 @@ import Foundation
 
 public protocol Model {
   associatedtype Entity
+  
+  static var empty: Self { get }
+  
+  var state: SyncState { get set }
+  var data: Entity { get set }
 }

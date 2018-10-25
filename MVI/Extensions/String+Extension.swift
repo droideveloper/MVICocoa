@@ -11,5 +11,4 @@ import Foundation
 extension String {
 	
 	public static let empty = ""
-	
 }
