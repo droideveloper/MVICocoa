@@ -12,7 +12,7 @@ import RxSwift
 public protocol ViewModel {
   associatedtype View
   associatedtype Model
-  
+    
   func attach()
   func state() -> Observable<SyncState>
   func store() -> Observable<Model>

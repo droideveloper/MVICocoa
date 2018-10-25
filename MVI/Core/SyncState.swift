@@ -41,3 +41,14 @@ public struct Failure: SyncState, Equatable {
     return lhs.error.localizedDescription == rhs.error.localizedDescription
   }
 }
+
+public let refresh = Process(.refresh)
+public let loadMore = Process(.loadMore)
+public let create = Process(.create)
+public let update = Process(.update)
+public let delete = Process(.delete)
+public let click = Process(.click)
+public let longClick = Process(.longClick)
+public let touch = Process(.touch)
+public let scrollUp = Process(.scrollUp)
+public let scrollDown = Process(.scrollDown)
