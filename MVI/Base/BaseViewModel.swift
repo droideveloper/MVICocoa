@@ -10,12 +10,9 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-open class BaseViewModel<T: Model, V: View>: ViewModel where V.Model == T {
+open class BaseViewModel<T: Model>: ViewModel {
   
-  public typealias View = V
   public typealias Model = T
-  
-  public let view: V
   
   private let intents = PublishRelay<Intent>()
   private lazy var storage = {
@@ -26,23 +23,17 @@ open class BaseViewModel<T: Model, V: View>: ViewModel where V.Model == T {
       .replay(1)
   }()
   
-  public init(view: V) {
-    self.view = view
-  }
-  
   let disposeBag = DisposeBag()
   
   public func attach() {
     // connect storage
     disposeBag += storage.connect()
-    // register on next
-    disposeBag += view.viewEvents()
-      .toIntent(view.container)
-      .subscribe(onNext: accept(_ :))
   }
   
   public func state() -> Observable<SyncState> {
-    return storage.map { model in model.state }
+    return storage.map { model in
+      return model.state
+    }
   }
   
   public func store() -> Observable<T> {

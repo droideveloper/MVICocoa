@@ -10,7 +10,6 @@ import Foundation
 import RxSwift
 
 public protocol ViewModel {
-  associatedtype View
   associatedtype Model
     
   func attach()
