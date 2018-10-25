@@ -42,6 +42,7 @@ public struct Failure: SyncState, Equatable {
   }
 }
 
+public let idle = Idle()
 public let refresh = Process(.refresh)
 public let loadMore = Process(.loadMore)
 public let create = Process(.create)
