@@ -15,4 +15,6 @@ public protocol Model {
   
   var state: SyncState { get set }
   var data: Entity { get set }
+  
+  func copy(state: SyncState?, data: Entity?) -> Self
 }
