@@ -14,9 +14,6 @@
 		3D013E4E2181BC2B00D1F063 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E4D2181BC2B00D1F063 /* UIViewController+Extension.swift */; };
 		3D013E502181C7E300D1F063 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E4F2181C7E300D1F063 /* BaseTableViewController.swift */; };
 		3D013E522181C8B600D1F063 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E512181C8B600D1F063 /* BaseCollectionViewController.swift */; };
-		3D013E552181D88900D1F063 /* StringModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E542181D88900D1F063 /* StringModel.swift */; };
-		3D013E5B2181E1DB00D1F063 /* StringViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E5A2181E1DB00D1F063 /* StringViewModel.swift */; };
-		3D013E5D2181E1FA00D1F063 /* StringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E5C2181E1FA00D1F063 /* StringViewController.swift */; };
 		3D0701C62180B13400467028 /* MVI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0701BC2180B13400467028 /* MVI.framework */; };
 		3D0701CB2180B13400467028 /* MVITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0701CA2180B13400467028 /* MVITests.swift */; };
 		3D0701CD2180B13400467028 /* MVI.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D0701BF2180B13400467028 /* MVI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -60,9 +57,6 @@
 		3D013E4D2181BC2B00D1F063 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		3D013E4F2181C7E300D1F063 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		3D013E512181C8B600D1F063 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
-		3D013E542181D88900D1F063 /* StringModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringModel.swift; sourceTree = "<group>"; };
-		3D013E5A2181E1DB00D1F063 /* StringViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringViewModel.swift; sourceTree = "<group>"; };
-		3D013E5C2181E1FA00D1F063 /* StringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringViewController.swift; sourceTree = "<group>"; };
 		3D0701BC2180B13400467028 /* MVI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MVI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D0701BF2180B13400467028 /* MVI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVI.h; sourceTree = "<group>"; };
 		3D0701C02180B13400467028 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -127,16 +121,6 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		3D013E532181D87300D1F063 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				3D013E542181D88900D1F063 /* StringModel.swift */,
-				3D013E5A2181E1DB00D1F063 /* StringViewModel.swift */,
-				3D013E5C2181E1FA00D1F063 /* StringViewController.swift */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
 		3D0701B22180B13400467028 = {
 			isa = PBXGroup;
 			children = (
@@ -160,7 +144,6 @@
 		3D0701BE2180B13400467028 /* MVI */ = {
 			isa = PBXGroup;
 			children = (
-				3D013E532181D87300D1F063 /* Test */,
 				3D013E4A2181B7BE00D1F063 /* Base */,
 				3D9B8D9B2180BF8C00DF7C6B /* Net */,
 				3D9B8D7E2180B20D00DF7C6B /* Extensions */,
@@ -434,7 +417,6 @@
 				3D9B8D8E2180B8D400DF7C6B /* Model.swift in Sources */,
 				3D013E4C2181B7D400D1F063 /* BaseViewModel.swift in Sources */,
 				3DD898DE2181877300DBBF1B /* Int+Extension.swift in Sources */,
-				3D013E5D2181E1FA00D1F063 /* StringViewController.swift in Sources */,
 				3DD898E021818A1600DBBF1B /* Int32+Extension.swift in Sources */,
 				3D013E522181C8B600D1F063 /* BaseCollectionViewController.swift in Sources */,
 				3D9B8D9D2180BF9800DF7C6B /* Requestable.swift in Sources */,
@@ -443,9 +425,7 @@
 				3D013E4E2181BC2B00D1F063 /* UIViewController+Extension.swift in Sources */,
 				3D9B8D822180B33E00DF7C6B /* Event.swift in Sources */,
 				3D9B8D902180B97C00DF7C6B /* Observable+Event.swift in Sources */,
-				3D013E5B2181E1DB00D1F063 /* StringViewModel.swift in Sources */,
 				3D9B8D8A2180B75000DF7C6B /* View.swift in Sources */,
-				3D013E552181D88900D1F063 /* StringModel.swift in Sources */,
 				3D9B8D802180B21800DF7C6B /* Intent.swift in Sources */,
 				3D9B8D982180BB6500DF7C6B /* Observable+Extension.swift in Sources */,
 				3DD898E221818A8D00DBBF1B /* String+Extension.swift in Sources */,
