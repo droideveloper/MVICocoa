@@ -59,10 +59,10 @@ public class ObservableList<T> {
     let index = dataSet.count - 1
 		if index >= 0 {
     	dataSet.append(contentsOf: values)
-    	notifyInsert(index, size: index + values.count - 1)
+    	notifyInsert(index, size: index + values.count)
 		} else {
 			dataSet.append(contentsOf: values)
-			notifyInsert(0, size: values.count - 1)
+			notifyInsert(0, size: values.count)
 		}
   }
   
@@ -76,7 +76,7 @@ public class ObservableList<T> {
   public func insert(_ values: [T], at: Int) {
 		if at >= 0 && at < dataSet.count {
     	dataSet.insert(contentsOf: values, at: at)
-    	notifyInsert(at, size: at + values.count - 1)
+    	notifyInsert(at, size: at + values.count)
 		}
   }
   
