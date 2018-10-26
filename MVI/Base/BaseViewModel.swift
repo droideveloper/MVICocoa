@@ -23,7 +23,7 @@ open class BaseViewModel<T: Model>: ViewModel {
       .replay(1)
   }()
   
-  let disposeBag = DisposeBag()
+  public let disposeBag = DisposeBag()
   
   public init() { }
   
