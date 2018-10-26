@@ -28,8 +28,8 @@ extension UIViewController {
     }
   }
   
-  public func showError(_ error: Error, _ completion: (() -> Void)? = nil) {
-    let sheetDialog = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .actionSheet)
+  public func showError(_ error: Error, _ style: UIAlertController.Style = .actionSheet,  _ completion: (() -> Void)? = nil) {
+    let sheetDialog = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: style)
     self.present(sheetDialog, animated: true, completion: completion)
   }
   
