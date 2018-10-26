@@ -25,6 +25,8 @@ open class BaseViewModel<T: Model>: ViewModel {
   
   let disposeBag = DisposeBag()
   
+  public init() { }
+  
   open func attach() {
     // connect storage
     disposeBag += storage.connect()
