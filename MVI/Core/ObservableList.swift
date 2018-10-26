@@ -46,29 +46,45 @@ public class ObservableList<T> {
   
   public func append(_ value: T) {
     let index = dataSet.count - 1
-    dataSet.append(value)
-    notifyInsert(index < 0 ? 0: index, size: 1)
+		if index >= 0 {
+    	dataSet.append(value)
+    	notifyInsert(index, size: 1)
+		} else {
+			dataSet.append(value)
+			notifyInsert(0, size: 1)
+		}
   }
   
   public func append(_ values: [T]) {
     let index = dataSet.count - 1
-    dataSet.append(contentsOf: values)
-    notifyInsert(index < 0 ? 0: index, size: index + values.count - 1)
+		if index >= 0 {
+    	dataSet.append(contentsOf: values)
+    	notifyInsert(index, size: index + values.count - 1)
+		} else {
+			dataSet.append(contentsOf: values)
+			notifyInsert(0, size: values.count - 1)
+		}
   }
   
   public func insert(_ value: T, at: Int) {
-    dataSet.insert(value, at: at)
-    notifyInsert(at, size: 1)
+		if at >= 0 && at < dataSet.count {
+    	dataSet.insert(value, at: at)
+    	notifyInsert(at, size: 1)
+		}
   }
   
   public func insert(_ values: [T], at: Int) {
-    dataSet.insert(contentsOf: values, at: at)
-    notifyInsert(at, size: at + values.count - 1)
+		if at >= 0 && at < dataSet.count {
+    	dataSet.insert(contentsOf: values, at: at)
+    	notifyInsert(at, size: at + values.count - 1)
+		}
   }
   
   public func remove(at: Int) {
-    dataSet.remove(at: at)
-    notifyRemove(at, size: 1)
+		if at >= 0 && at < dataSet.count {
+    	dataSet.remove(at: at)
+    	notifyRemove(at, size: 1)
+		}
   }
   
   public func clear() {
@@ -80,8 +96,10 @@ public class ObservableList<T> {
   }
   
   public func put(at: Int, value: T) {
-    dataSet[at] = value
-    notifyChange(at, size: 1)
+		if at >= 0 && at < dataSet.count {
+    	dataSet[at] = value
+    	notifyChange(at, size: 1)
+		}
   }
   
   public func get(_ index: Int) -> T {

@@ -27,6 +27,6 @@ extension UICollectionView {
   }
   
   private func toIndexPath(index: Int, size: Int) -> [IndexPath] {
-    return Array(index..<size).map { position in IndexPath(row: position, section: 0) }
+    return (index..<size).map { position in IndexPath(row: position, section: 0) }
   }
 }
