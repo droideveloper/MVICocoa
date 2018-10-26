@@ -28,12 +28,12 @@ extension UIViewController {
     }
   }
   
-  public func showError(_ error: Error, _ style: UIAlertController.Style = .actionSheet,  _ completion: (() -> Void)? = nil) {
+  open func showError(_ error: Error, _ style: UIAlertController.Style = .actionSheet,  _ completion: (() -> Void)? = nil) {
     let sheetDialog = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: style)
     self.present(sheetDialog, animated: true, completion: completion)
   }
   
-  public func attachTo(parentViewController: UIViewController) {
+  open func attachTo(parentViewController: UIViewController) {
     parentViewController.addChild(self)
     if let view = parentViewController.view.viewWithTag(contentFramTag) {
       self.view.frame = view.bounds
@@ -44,7 +44,7 @@ extension UIViewController {
     }
   }
   
-  public func detachFromParentViewController() {
+  open func detachFromParentViewController() {
     self.willMove(toParent: nil)
     self.view.removeFromSuperview()
     self.removeFromParent()

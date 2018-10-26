@@ -35,11 +35,11 @@ open class BaseViewController<T: Model, V: ViewModel>: UIViewController, View wh
     attach()
   }
   
-  public func setUp() {
+  open func setUp() {
     // TODO do your set up
   }
   
-  public func attach() {
+  open func attach() {
     // base attach functionality
     viewModel.attach()
     
@@ -60,15 +60,15 @@ open class BaseViewController<T: Model, V: ViewModel>: UIViewController, View wh
       .subscribe(onNext: render(model:))
   }
   
-  public func render(model: T) {
+  open func render(model: T) {
     // TODO implement
   }
   
-  public func viewEvents() -> Observable<Event> {
+  open func viewEvents() -> Observable<Event> {
     return events.share()
   }
   
-  func accept(_ event: Event) {
+  public func accept(_ event: Event) {
     events.accept(event)
   }
 }

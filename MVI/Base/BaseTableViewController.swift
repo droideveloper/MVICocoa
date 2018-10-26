@@ -32,11 +32,11 @@ open class BaseTableViewController<T: Model, V: ViewModel>: UITableViewControlle
     attach()
   }
   
-  public func setUp() {
+  open func setUp() {
     // TODO do your set up
   }
   
-  public func attach() {
+  open func attach() {
     // base attach functionality
     viewModel.attach()
     
@@ -57,11 +57,11 @@ open class BaseTableViewController<T: Model, V: ViewModel>: UITableViewControlle
       .subscribe(onNext: render(model:))
   }
   
-  public func render(model: T) {
+  open func render(model: T) {
     // TODO implement
   }
   
-  public func viewEvents() -> Observable<Event> {
+  open func viewEvents() -> Observable<Event> {
     return events.share()
   }
   
