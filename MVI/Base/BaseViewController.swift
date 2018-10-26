@@ -27,7 +27,7 @@ open class BaseViewController<T: Model, V: ViewModel>: UIViewController, View wh
   }()
   
   private let events = PublishRelay<Event>()
-  let disposeBag = DisposeBag()
+  public let disposeBag = DisposeBag()
   
   open override func viewDidLoad() {
     super.viewDidLoad()
