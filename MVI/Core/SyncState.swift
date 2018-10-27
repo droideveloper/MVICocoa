@@ -16,7 +16,7 @@ public struct Process: SyncState, Equatable {
   
   public let type: ProcessType
   
-  init(_ type: ProcessType) {
+  public init(_ type: ProcessType) {
     self.type = type
   }
 
@@ -33,7 +33,7 @@ public struct Failure: SyncState, Equatable {
   
   public let error: Error
   
-  init(_ error: Error) {
+  public init(_ error: Error) {
     self.error = error
   }
   
