@@ -10,7 +10,9 @@ import Foundation
 import Swinject
 
 open class Event {
-  
+	
+	public init() { }
+	
   private let emptyIntent = EmptyIntent()
   
   open func toIntent(container: Container?) -> Intent {
