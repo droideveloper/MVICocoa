@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UICollectionView {
+extension UICollectionView: PropertyChangable {
   
   public func notifyItemsChanged(_ index: Int, size: Int) {
     let paths = toIndexPath(index: index, size: size)
