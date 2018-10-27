@@ -25,6 +25,8 @@ public class ObservableList<T> {
       return dataSet.isEmpty
     }
   }
+	
+	public init() { }
   
   public func register(_ callback: PropertyChangable) {
     let index = protocols.firstIndex(where: { listener in
