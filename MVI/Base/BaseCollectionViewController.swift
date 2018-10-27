@@ -66,7 +66,7 @@ open class BaseCollectionViewController<T: Model, V: ViewModel>: UICollectionVie
     return events.share()
   }
   
-  func accept(_ event: Event) {
+  public func accept(_ event: Event) {
     events.accept(event)
   }
 }

@@ -65,7 +65,7 @@ open class BaseTableViewController<T: Model, V: ViewModel>: UITableViewControlle
     return events.share()
   }
   
-  func accept(_ event: Event) {
+  public func accept(_ event: Event) {
     events.accept(event)
   }
 }
