@@ -16,12 +16,7 @@ open class BaseTableViewController<T: Model, V: ViewModel>: UITableViewControlle
   public typealias ViewModel = V
   public typealias Model = T
 
-  public lazy var viewModel: V = {
-    if let viewModel = container?.resolve(V.self) {
-      return viewModel
-    }
-    fatalError("we can not resolve view model of \(V.self)")
-  }()
+  public var viewModel: V?
   
   private let events = PublishRelay<Event>()
   public let disposeBag = DisposeBag()
@@ -37,24 +32,26 @@ open class BaseTableViewController<T: Model, V: ViewModel>: UITableViewControlle
   }
   
   open func attach() {
-    // base attach functionality
-    viewModel.attach()
-    
-    if let refreshControl = refreshControl {
-      // will render progress state into viewProgress instance
-      disposeBag += viewModel.state()
-        .map { state in
-          if let state = state as? Process {
-            return state == refresh
-          }
-          return false
-        }
-        .subscribe(refreshControl.rx.isRefreshing)
-    }
-    
-    // will render view state
-    disposeBag += viewModel.store()
-      .subscribe(onNext: render(model:))
+		if let viewModel = viewModel {
+			// base attach functionality
+			viewModel.attach()
+			
+			if let refreshControl = refreshControl {
+				// will render progress state into viewProgress instance
+				disposeBag += viewModel.state()
+					.map { state in
+						if let state = state as? Process {
+							return state == refresh
+						}
+						return false
+					}
+					.subscribe(refreshControl.rx.isRefreshing)
+			}
+			
+			// will render view state
+			disposeBag += viewModel.store()
+				.subscribe(onNext: render(model:))
+		}
   }
   
   open func render(model: T) {
