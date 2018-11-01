@@ -9,7 +9,7 @@
 import Foundation
 
 
-public class ObservableList<T> {
+public class ObservableList<T> where T: Equatable {
   
   private var dataSet = Array<T>()
   private var protocols = Array<PropertyChangable>()
@@ -108,8 +108,8 @@ public class ObservableList<T> {
     return dataSet[index]
   }
 	
-	public func indexOf(_ predicate: (T) -> Bool) -> Int {
-		return dataSet.firstIndex(where: predicate) ?? -1
+	public func indexOf(_ value: T) -> Int {
+		return dataSet.index(of: value) ?? -1
 	}
   
   private func notifyInsert(_ index: Int, size: Int) {
