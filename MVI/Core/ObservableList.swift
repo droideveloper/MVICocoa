@@ -107,6 +107,10 @@ public class ObservableList<T> {
   public func get(_ index: Int) -> T {
     return dataSet[index]
   }
+	
+	public func indexOf(_ predicate: (T) -> Bool) -> Int {
+		return dataSet.firstIndex(where: predicate) ?? -1
+	}
   
   private func notifyInsert(_ index: Int, size: Int) {
     protocols.forEach { listener in listener.notifyItemsInserted(index, size: size) }
