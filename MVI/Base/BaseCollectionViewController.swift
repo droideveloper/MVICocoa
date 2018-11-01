@@ -20,10 +20,11 @@ open class BaseCollectionViewController<T: Model, V: ViewModel>: UICollectionVie
   public var viewModel: V?
   
   private let events = PublishRelay<Event>()
-  public let disposeBag = DisposeBag()
+	public var disposeBag: DisposeBag? = nil
   
   open override func viewDidLoad() {
     super.viewDidLoad()
+		disposeBag = DisposeBag()
     setUp()
     attach()
   }
@@ -37,28 +38,35 @@ open class BaseCollectionViewController<T: Model, V: ViewModel>: UICollectionVie
 			// base attach functionality
 			viewModel.attach()
 			
-			if let refreshControl = refreshControl {
-				// will render progress state into viewProgress instance
-				disposeBag += viewModel.state()
-					.map { state in
-						if let state = state as? Process {
-							return state == refresh
+			if let disposeBag = disposeBag {
+				if let refreshControl = refreshControl {
+					// will render progress state into viewProgress instance
+					disposeBag += viewModel.state()
+						.map { state in
+							if let state = state as? Process {
+								return state == refresh
+							}
+							return false
 						}
-						return false
-					}
-					.subscribe(refreshControl.rx.isRefreshing)
-			}
-			
-			// will render view state
-			disposeBag += viewModel.store()
-				.subscribe(onNext: render(model:))
+						.subscribe(refreshControl.rx.isRefreshing)
+				}
+				
+				// will render view state
+				disposeBag += viewModel.store()
+					.subscribe(onNext: render(model:))
+				}
 		}
   }
   
   open func render(model: T) {
     // TODO implement
   }
-  
+	
+	open override func viewDidDisappear(_ animated: Bool) {
+		disposeBag = nil
+		super.viewDidDisappear(animated)
+	}
+	
   open func viewEvents() -> Observable<Event> {
     return events.share()
   }
