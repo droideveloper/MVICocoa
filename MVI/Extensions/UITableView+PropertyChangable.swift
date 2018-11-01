@@ -23,7 +23,8 @@ extension UITableView: PropertyChangable {
   
   public func notifyItemsInserted(_ index: Int, size: Int) {
     let paths = toIndexPath(index: index, size: size)
-    self.reloadRows(at: paths, with: .automatic)
+    self.insertRows(at: paths, with: .automatic)
+		self.reloadRows(at: paths, with: .automatic)
   }
   
   private func toIndexPath(index: Int, size: Int) -> [IndexPath] {
