@@ -13,6 +13,8 @@ public class CompositeDisposable {
 	
 	private var bag = Array<Disposable>()
 	
+	public init() { }
+	
 	public func add(_ disposable: Disposable) {
 		bag.append(disposable)
 	}
