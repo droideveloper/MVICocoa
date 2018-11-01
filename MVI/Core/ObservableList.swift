@@ -50,7 +50,7 @@ public class ObservableList<T> where T: Equatable {
 		if dataSet.count - 1 >= 0 {
     	dataSet.append(value)
 			let index = dataSet.count - 1
-    	notifyInsert(index, size: index + 1)
+    	notifyInsert(index, size: dataSet.count)
 		} else {
 			dataSet.append(value)
 			notifyInsert(0, size: 1)
@@ -58,10 +58,10 @@ public class ObservableList<T> where T: Equatable {
   }
   
   public func append(_ values: [T]) {
-    let index = dataSet.count - 1
-		if index >= 0 {
+		if dataSet.count - 1 >= 0 {
     	dataSet.append(contentsOf: values)
-    	notifyInsert(index, size: index + values.count)
+			let index = dataSet.count - values.count
+    	notifyInsert(index, size: dataSet.count)
 		} else {
 			dataSet.append(contentsOf: values)
 			notifyInsert(0, size: values.count)
