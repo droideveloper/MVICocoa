@@ -19,14 +19,17 @@ open class BaseTableViewController<T: Model, V: ViewModel>: UITableViewControlle
   public var viewModel: V?
   
   private let events = PublishRelay<Event>()
-	public var disposeBag: DisposeBag? = nil
+	public let disposeBag = CompositeDisposable()
   
   open override func viewDidLoad() {
     super.viewDidLoad()
-		disposeBag = DisposeBag()
     setUp()
-    attach()
   }
+	
+	open override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		attach()
+	}
   
   open func setUp() {
     // TODO do your set up
@@ -36,33 +39,33 @@ open class BaseTableViewController<T: Model, V: ViewModel>: UITableViewControlle
 		if let viewModel = viewModel {
 			// base attach functionality
 			viewModel.attach()
-			if let disposeBag = disposeBag {
-				if let refreshControl = refreshControl {
-					// will render progress state into viewProgress instance
-					disposeBag += viewModel.state()
-						.map { state in
-							if let state = state as? Process {
-								return state == refresh
-							}
-							return false
+			
+			if let refreshControl = refreshControl {
+				// will render progress state into viewProgress instance
+				disposeBag += viewModel.state()
+					.map { state in
+						if let state = state as? Process {
+							return state == refresh
 						}
-						.subscribe(refreshControl.rx.isRefreshing)
-				}
-				
-				// will render view state
-				disposeBag += viewModel.store()
-					.subscribe(onNext: render(model:))
-				}
-		}
+						return false
+					}
+					.subscribe(refreshControl.rx.isRefreshing)
+			}
+			
+			// will render view state
+			disposeBag += viewModel.store()
+				.subscribe(onNext: render(model:))
+			}
   }
   
   open func render(model: T) {
     // TODO implement
   }
 	
-	open override func viewDidDisappear(_ animated: Bool) {
-		disposeBag = nil
-		super.viewDidDisappear(animated)
+	open override func viewWillDisappear(_ animated: Bool) {
+		disposeBag.clear()
+		viewModel?.detach()
+		super.viewWillDisappear(animated)
 	}
   
   open func viewEvents() -> Observable<Event> {

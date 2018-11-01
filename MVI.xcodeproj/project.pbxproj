@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		117170C367F3FBDB250D2AF3 /* Pods_MVITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A18E59613E868021D98C06C /* Pods_MVITests.framework */; };
 		3D013E472181ADD300D1F063 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E462181ADD300D1F063 /* BaseViewController.swift */; };
-		3D013E492181B0E500D1F063 /* DisposeBag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E482181B0E500D1F063 /* DisposeBag+Extension.swift */; };
 		3D013E4C2181B7D400D1F063 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E4B2181B7D400D1F063 /* BaseViewModel.swift */; };
 		3D013E4E2181BC2B00D1F063 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E4D2181BC2B00D1F063 /* UIViewController+Extension.swift */; };
 		3D013E502181C7E300D1F063 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E4F2181C7E300D1F063 /* BaseTableViewController.swift */; };
@@ -21,6 +20,7 @@
 		3D0701C62180B13400467028 /* MVI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0701BC2180B13400467028 /* MVI.framework */; };
 		3D0701CB2180B13400467028 /* MVITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0701CA2180B13400467028 /* MVITests.swift */; };
 		3D0701CD2180B13400467028 /* MVI.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D0701BF2180B13400467028 /* MVI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3D80A199218B46E80007BC12 /* CompositeDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D80A198218B46E80007BC12 /* CompositeDisposable.swift */; };
 		3D9B8D802180B21800DF7C6B /* Intent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9B8D7F2180B21800DF7C6B /* Intent.swift */; };
 		3D9B8D822180B33E00DF7C6B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9B8D812180B33E00DF7C6B /* Event.swift */; };
 		3D9B8D842180B3DD00DF7C6B /* BusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9B8D832180B3DD00DF7C6B /* BusManager.swift */; };
@@ -56,7 +56,6 @@
 /* Begin PBXFileReference section */
 		1A18E59613E868021D98C06C /* Pods_MVITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D013E462181ADD300D1F063 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		3D013E482181B0E500D1F063 /* DisposeBag+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DisposeBag+Extension.swift"; sourceTree = "<group>"; };
 		3D013E4B2181B7D400D1F063 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		3D013E4D2181BC2B00D1F063 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		3D013E4F2181C7E300D1F063 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +70,7 @@
 		3D0701C52180B13400467028 /* MVITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D0701CA2180B13400467028 /* MVITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVITests.swift; sourceTree = "<group>"; };
 		3D0701CC2180B13400467028 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D80A198218B46E80007BC12 /* CompositeDisposable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeDisposable.swift; sourceTree = "<group>"; };
 		3D9B8D7F2180B21800DF7C6B /* Intent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intent.swift; sourceTree = "<group>"; };
 		3D9B8D812180B33E00DF7C6B /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		3D9B8D832180B3DD00DF7C6B /* BusManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusManager.swift; sourceTree = "<group>"; };
@@ -184,6 +184,7 @@
 				3DD898E521818BB000DBBF1B /* Injectable.swift */,
 				3D013E9821821D5A00D1F063 /* PropertyChangable.swift */,
 				3D013E9A21821D9900D1F063 /* ObservableList.swift */,
+				3D80A198218B46E80007BC12 /* CompositeDisposable.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -201,7 +202,6 @@
 				3DD898DD2181877300DBBF1B /* Int+Extension.swift */,
 				3DD898DF21818A1600DBBF1B /* Int32+Extension.swift */,
 				3DD898E121818A8D00DBBF1B /* String+Extension.swift */,
-				3D013E482181B0E500D1F063 /* DisposeBag+Extension.swift */,
 				3D013E4D2181BC2B00D1F063 /* UIViewController+Extension.swift */,
 				3D013E9C21821E6D00D1F063 /* UITableView+PropertyChangable.swift */,
 				3D013E9E21821EA600D1F063 /* UICollectionView+PropertyChangable.swift */,
@@ -441,6 +441,7 @@
 				3D013E9D21821E6D00D1F063 /* UITableView+PropertyChangable.swift in Sources */,
 				3D013E9F21821EA600D1F063 /* UICollectionView+PropertyChangable.swift in Sources */,
 				3D9B8D8A2180B75000DF7C6B /* View.swift in Sources */,
+				3D80A199218B46E80007BC12 /* CompositeDisposable.swift in Sources */,
 				3D9B8D802180B21800DF7C6B /* Intent.swift in Sources */,
 				3D9B8D982180BB6500DF7C6B /* Observable+Extension.swift in Sources */,
 				3DD898E221818A8D00DBBF1B /* String+Extension.swift in Sources */,
@@ -453,7 +454,6 @@
 				3D9B8D922180BA2700DF7C6B /* Observable+Intent.swift in Sources */,
 				3D9B8D8C2180B83C00DF7C6B /* ViewModel.swift in Sources */,
 				3D9B8D842180B3DD00DF7C6B /* BusManager.swift in Sources */,
-				3D013E492181B0E500D1F063 /* DisposeBag+Extension.swift in Sources */,
 				3D9B8D942180BA3A00DF7C6B /* Intent+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

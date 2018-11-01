@@ -23,7 +23,7 @@ open class BaseViewModel<T: Model>: ViewModel {
       .replay(1)
   }()
   
-  public let disposeBag = DisposeBag()
+  public let disposeBag = CompositeDisposable()
   
   public init() { }
   
@@ -31,7 +31,11 @@ open class BaseViewModel<T: Model>: ViewModel {
     // connect storage
     disposeBag += storage.connect()
   }
-  
+	
+	open func detach() {
+		disposeBag.clear()
+	}
+	
   open func state() -> Observable<SyncState> {
     return storage.map { model in
       return model.state

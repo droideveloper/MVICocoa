@@ -13,6 +13,7 @@ public protocol ViewModel {
   associatedtype Model
     
   func attach()
+	func detach()
   func state() -> Observable<SyncState>
   func store() -> Observable<Model>
   func accept(_ intent: Intent)
