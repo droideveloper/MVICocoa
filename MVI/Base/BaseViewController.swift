@@ -22,7 +22,7 @@ open class BaseViewController<T: Model, V: ViewModel>: UIViewController, View wh
   public var viewModel: V?
   
   private let events = PublishRelay<Event>()
-	public let disposeBag = CompositeDisposable()
+	public let disposeBag = CompositeDisposeBag()
 	
 	
 	open override func viewDidLoad() {
