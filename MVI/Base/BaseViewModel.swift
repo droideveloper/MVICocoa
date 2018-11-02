@@ -23,7 +23,7 @@ open class BaseViewModel<T: Model>: ViewModel {
       .replay(1)
   }()
   
-  public let disposeBag = CompositeDisposable()
+  public let disposeBag = CompositeDisposeBag()
   
   public init() { }
   

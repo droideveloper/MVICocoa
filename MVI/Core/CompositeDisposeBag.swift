@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-public class CompositeDisposable {
+public class CompositeDisposeBag {
 	
 	private var bag = Array<Disposable>()
 	
@@ -26,7 +26,7 @@ public class CompositeDisposable {
 		bag.removeAll()
 	}
 	
-	public static func += (bag: CompositeDisposable, d: Disposable) {
+	public static func += (bag: CompositeDisposeBag, d: Disposable) {
 		bag.add(d)
 	}
 }

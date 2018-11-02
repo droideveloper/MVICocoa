@@ -19,7 +19,7 @@ open class BaseTableViewController<T: Model, V: ViewModel>: UITableViewControlle
   public var viewModel: V?
   
   private let events = PublishRelay<Event>()
-	public let disposeBag = CompositeDisposable()
+	public let disposeBag = CompositeDisposeBag()
   
   open override func viewDidLoad() {
     super.viewDidLoad()
