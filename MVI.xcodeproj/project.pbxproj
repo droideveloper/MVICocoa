@@ -21,6 +21,8 @@
 		3D0701CB2180B13400467028 /* MVITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0701CA2180B13400467028 /* MVITests.swift */; };
 		3D0701CD2180B13400467028 /* MVI.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D0701BF2180B13400467028 /* MVI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3D80A199218B46E80007BC12 /* CompositeDisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D80A198218B46E80007BC12 /* CompositeDisposeBag.swift */; };
+		3D9922BC218F5BB80068017A /* FileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9922BB218F5BB80068017A /* FileRepository.swift */; };
+		3D9922BE218F5C3D0068017A /* FileRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9922BD218F5C3D0068017A /* FileRepositoryImp.swift */; };
 		3D9B8D802180B21800DF7C6B /* Intent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9B8D7F2180B21800DF7C6B /* Intent.swift */; };
 		3D9B8D822180B33E00DF7C6B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9B8D812180B33E00DF7C6B /* Event.swift */; };
 		3D9B8D842180B3DD00DF7C6B /* BusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9B8D832180B3DD00DF7C6B /* BusManager.swift */; };
@@ -71,6 +73,8 @@
 		3D0701CA2180B13400467028 /* MVITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVITests.swift; sourceTree = "<group>"; };
 		3D0701CC2180B13400467028 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D80A198218B46E80007BC12 /* CompositeDisposeBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeDisposeBag.swift; sourceTree = "<group>"; };
+		3D9922BB218F5BB80068017A /* FileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileRepository.swift; sourceTree = "<group>"; };
+		3D9922BD218F5C3D0068017A /* FileRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileRepositoryImp.swift; sourceTree = "<group>"; };
 		3D9B8D7F2180B21800DF7C6B /* Intent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intent.swift; sourceTree = "<group>"; };
 		3D9B8D812180B33E00DF7C6B /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		3D9B8D832180B3DD00DF7C6B /* BusManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusManager.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 		3D0701BE2180B13400467028 /* MVI */ = {
 			isa = PBXGroup;
 			children = (
+				3D9922BA218F5BA90068017A /* Repo */,
 				3D013E4A2181B7BE00D1F063 /* Base */,
 				3D9B8D9B2180BF8C00DF7C6B /* Net */,
 				3D9B8D7E2180B20D00DF7C6B /* Extensions */,
@@ -169,6 +174,15 @@
 				3D0701CC2180B13400467028 /* Info.plist */,
 			);
 			path = MVITests;
+			sourceTree = "<group>";
+		};
+		3D9922BA218F5BA90068017A /* Repo */ = {
+			isa = PBXGroup;
+			children = (
+				3D9922BB218F5BB80068017A /* FileRepository.swift */,
+				3D9922BD218F5C3D0068017A /* FileRepositoryImp.swift */,
+			);
+			path = Repo;
 			sourceTree = "<group>";
 		};
 		3D9B8D7D2180B20600DF7C6B /* Core */ = {
@@ -455,6 +469,8 @@
 				3D9B8D8C2180B83C00DF7C6B /* ViewModel.swift in Sources */,
 				3D9B8D842180B3DD00DF7C6B /* BusManager.swift in Sources */,
 				3D9B8D942180BA3A00DF7C6B /* Intent+Extension.swift in Sources */,
+				3D9922BE218F5C3D0068017A /* FileRepositoryImp.swift in Sources */,
+				3D9922BC218F5BB80068017A /* FileRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
