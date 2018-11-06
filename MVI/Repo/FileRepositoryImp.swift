@@ -13,16 +13,11 @@ public class FileRepositoryImp: FileRepository {
 	
 	private let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
 	
-	public var directory: URL {
-		get {
-			if let dir = dir {
-				return dir
-			}
-			fatalError("we can not access documents directory for this user")
-		}
-	}
-	
 	public init() {}
+	
+	public func file(for path: String) -> URL? {
+		return dir?.appendingPathComponent(path)
+	}
 	
 	public func read<T>(url: URL, as type: T.Type) -> Observable<T> where T: Codable {
 		return Observable.create { emitter in
