@@ -11,8 +11,7 @@ import RxSwift
 
 public protocol FileRepository {
 	
-	var directory: URL { get }
-	
+	func file(for path: String) -> URL?
 	func write<T: Codable>(url: URL, object: T) -> Completable
 	func read<T: Codable>(url: URL, as type: T.Type) -> Observable<T>
 }
