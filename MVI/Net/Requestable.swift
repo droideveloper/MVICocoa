@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-public protocol Requastable {
+public protocol Requestable {
   
   var baseUrl: String { get }
   var request: (HTTPMethod, URLConvertible) { get }
