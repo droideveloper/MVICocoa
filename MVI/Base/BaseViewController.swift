@@ -16,9 +16,7 @@ open class BaseViewController<T: Model, V: ViewModel>: UIViewController, View wh
   
   public typealias ViewModel = V
   public typealias Model = T
-  
-  @IBOutlet public weak var viewProgress: UIActivityIndicatorView?
-  
+    
   public var viewModel: V?
   
   private let events = PublishRelay<Event>()
@@ -43,18 +41,6 @@ open class BaseViewController<T: Model, V: ViewModel>: UIViewController, View wh
 		if let viewModel = viewModel {
 			// base attach functionality
 			viewModel.attach()
-			
-			if let viewProgress = viewProgress {
-				// will render progress state into viewProgress instance
-				disposeBag += viewModel.state()
-					.map { state in
-						if let state = state as? Process {
-							return state == refresh
-						}
-						return false
-					}
-					.subscribe(viewProgress.rx.isAnimating)
-			}
 			
 			// will render view state
 			disposeBag += viewModel.store()

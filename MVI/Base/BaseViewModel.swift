@@ -19,14 +19,18 @@ open class BaseViewModel<T: Model>: ViewModel {
     return intents.asObservable()
       .toReducer()
       .observeOn(MainScheduler.instance)
-      .scan(Model.empty, accumulator: { o, reducer in reducer(o) })
+      .scan(initialState(), accumulator: { o, reducer in reducer(o) })
       .replay(1)
   }()
   
   public let disposeBag = CompositeDisposeBag()
   
   public init() { }
-  
+	
+	open func initialState() -> T {
+		return Model.empty
+	}
+	
   open func attach() {
     // connect storage
     disposeBag += storage.connect()
