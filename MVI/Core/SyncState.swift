@@ -12,19 +12,15 @@ public protocol SyncState {}
 
 public struct Idle: SyncState, Equatable { }
 
-public struct Process: SyncState, Equatable {
+public struct Operation: SyncState, Equatable {
   
-  public let type: ProcessType
+  public let type: Int
   
-  public init(_ type: ProcessType) {
+  public init(_ type: Int) {
     self.type = type
   }
-
-  public enum ProcessType {
-    case refresh, loadMore, create, update, delete, click, longClick, touch, scrollUp, scrollDown
-  }
   
-  public static func == (lhs: Process, rhs: Process) -> Bool {
+  public static func == (lhs: Operation, rhs: Operation) -> Bool {
     return lhs.type == rhs.type
   }
 }
@@ -43,13 +39,7 @@ public struct Failure: SyncState, Equatable {
 }
 
 public let idle = Idle()
-public let refresh = Process(.refresh)
-public let loadMore = Process(.loadMore)
-public let create = Process(.create)
-public let update = Process(.update)
-public let delete = Process(.delete)
-public let click = Process(.click)
-public let longClick = Process(.longClick)
-public let touch = Process(.touch)
-public let scrollUp = Process(.scrollUp)
-public let scrollDown = Process(.scrollDown)
+//
+private let refreshOperation = 0x01
+public let refresh = Operation(refreshOperation)
+

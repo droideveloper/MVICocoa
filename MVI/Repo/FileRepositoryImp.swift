@@ -12,6 +12,9 @@ import RxSwift
 public class FileRepositoryImp: FileRepository {
 	
 	private let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+	private let fileManager = FileManager.default
+	private let decoder = JSONDecoder()
+	private let encoder = JSONEncoder()
 	
 	public init() {}
 	
@@ -22,12 +25,9 @@ public class FileRepositoryImp: FileRepository {
 	public func read<T>(url: URL, as type: T.Type) -> Observable<T> where T: Codable {
 		return Observable.create { emitter in
 			do {
-				let decoder = JSONDecoder()
-				let fileManager = FileManager.default
-				
-				if fileManager.fileExists(atPath: url.path) {
-					if let data = fileManager.contents(atPath: url.path) {
-						let result = try decoder.decode(type, from: data)
+				if self.fileManager.fileExists(atPath: url.path) {
+					if let data = self.fileManager.contents(atPath: url.path) {
+						let result = try self.decoder.decode(type, from: data)
 						emitter.onNext(result)
 						emitter.onCompleted()
 					}
@@ -46,14 +46,12 @@ public class FileRepositoryImp: FileRepository {
 	public func write<T>(url: URL, object: T) -> Completable where T: Codable {
 		return Completable.create { emitter in
 			do {
-				let encoder = JSONEncoder()
-				let fileManager = FileManager.default
 				
-				let data = try encoder.encode(object)
-				if fileManager.fileExists(atPath: url.path) {
-					try fileManager.removeItem(at: url)
+				let data = try self.encoder.encode(object)
+				if self.fileManager.fileExists(atPath: url.path) {
+					try self.fileManager.removeItem(at: url)
 				}
-				let success = fileManager.createFile(atPath: url.path, contents: data, attributes: nil)
+				let success = self.fileManager.createFile(atPath: url.path, contents: data, attributes: nil)
 				if success {
 					emitter(.completed)
 				} else {
