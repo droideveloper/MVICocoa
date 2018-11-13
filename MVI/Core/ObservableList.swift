@@ -108,6 +108,10 @@ public class ObservableList<T> where T: Equatable {
     return dataSet[index]
   }
 	
+	public func asArray() -> Array<T> {
+		return dataSet
+	}
+	
 	public func indexOf(_ value: T) -> Int {
 		return dataSet.index(of: value) ?? -1
 	}
