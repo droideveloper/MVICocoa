@@ -37,6 +37,7 @@
 		3D9B8D982180BB6500DF7C6B /* Observable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9B8D972180BB6500DF7C6B /* Observable+Extension.swift */; };
 		3D9B8D9A2180BC4900DF7C6B /* DataRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9B8D992180BC4900DF7C6B /* DataRequest+Extension.swift */; };
 		3D9B8D9D2180BF9800DF7C6B /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9B8D9C2180BF9800DF7C6B /* Requestable.swift */; };
+		3DB99A1F21A1FCBA00ADBAE4 /* Logable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB99A1E21A1FCBA00ADBAE4 /* Logable.swift */; };
 		3DD898DC218186CF00DBBF1B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD898DB218186CF00DBBF1B /* UIColor+Extension.swift */; };
 		3DD898DE2181877300DBBF1B /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD898DD2181877300DBBF1B /* Int+Extension.swift */; };
 		3DD898E021818A1600DBBF1B /* Int32+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD898DF21818A1600DBBF1B /* Int32+Extension.swift */; };
@@ -89,6 +90,7 @@
 		3D9B8D972180BB6500DF7C6B /* Observable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extension.swift"; sourceTree = "<group>"; };
 		3D9B8D992180BC4900DF7C6B /* DataRequest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataRequest+Extension.swift"; sourceTree = "<group>"; };
 		3D9B8D9C2180BF9800DF7C6B /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		3DB99A1E21A1FCBA00ADBAE4 /* Logable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logable.swift; sourceTree = "<group>"; };
 		3DD898DB218186CF00DBBF1B /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		3DD898DD2181877300DBBF1B /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		3DD898DF21818A1600DBBF1B /* Int32+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int32+Extension.swift"; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				3D013E9821821D5A00D1F063 /* PropertyChangable.swift */,
 				3D013E9A21821D9900D1F063 /* ObservableList.swift */,
 				3D80A198218B46E80007BC12 /* CompositeDisposeBag.swift */,
+				3DB99A1E21A1FCBA00ADBAE4 /* Logable.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				3D9B8D842180B3DD00DF7C6B /* BusManager.swift in Sources */,
 				3D9B8D942180BA3A00DF7C6B /* Intent+Extension.swift in Sources */,
 				3D9922BE218F5C3D0068017A /* FileRepositoryImp.swift in Sources */,
+				3DB99A1F21A1FCBA00ADBAE4 /* Logable.swift in Sources */,
 				3D9922BC218F5BB80068017A /* FileRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
