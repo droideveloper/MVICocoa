@@ -17,6 +17,8 @@
 		3D013E9B21821D9900D1F063 /* ObservableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E9A21821D9900D1F063 /* ObservableList.swift */; };
 		3D013E9D21821E6D00D1F063 /* UITableView+PropertyChangable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E9C21821E6D00D1F063 /* UITableView+PropertyChangable.swift */; };
 		3D013E9F21821EA600D1F063 /* UICollectionView+PropertyChangable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E9E21821EA600D1F063 /* UICollectionView+PropertyChangable.swift */; };
+		3D05C4BA21B31C7F0062737F /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D05C4B921B31C7F0062737F /* TableDataSource.swift */; };
+		3D05C4BC21B31D200062737F /* CollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D05C4BB21B31D200062737F /* CollectionDataSource.swift */; };
 		3D0701C62180B13400467028 /* MVI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0701BC2180B13400467028 /* MVI.framework */; };
 		3D0701CB2180B13400467028 /* MVITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0701CA2180B13400467028 /* MVITests.swift */; };
 		3D0701CD2180B13400467028 /* MVI.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D0701BF2180B13400467028 /* MVI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -67,6 +69,8 @@
 		3D013E9A21821D9900D1F063 /* ObservableList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableList.swift; sourceTree = "<group>"; };
 		3D013E9C21821E6D00D1F063 /* UITableView+PropertyChangable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+PropertyChangable.swift"; sourceTree = "<group>"; };
 		3D013E9E21821EA600D1F063 /* UICollectionView+PropertyChangable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+PropertyChangable.swift"; sourceTree = "<group>"; };
+		3D05C4B921B31C7F0062737F /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
+		3D05C4BB21B31D200062737F /* CollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDataSource.swift; sourceTree = "<group>"; };
 		3D0701BC2180B13400467028 /* MVI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MVI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D0701BF2180B13400467028 /* MVI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVI.h; sourceTree = "<group>"; };
 		3D0701C02180B13400467028 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -202,6 +206,8 @@
 				3D013E9A21821D9900D1F063 /* ObservableList.swift */,
 				3D80A198218B46E80007BC12 /* CompositeDisposeBag.swift */,
 				3DB99A1E21A1FCBA00ADBAE4 /* Logable.swift */,
+				3D05C4B921B31C7F0062737F /* TableDataSource.swift */,
+				3D05C4BB21B31D200062737F /* CollectionDataSource.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -474,6 +480,8 @@
 				3D9B8D942180BA3A00DF7C6B /* Intent+Extension.swift in Sources */,
 				3D9922BE218F5C3D0068017A /* FileRepositoryImp.swift in Sources */,
 				3DB99A1F21A1FCBA00ADBAE4 /* Logable.swift in Sources */,
+				3D05C4BA21B31C7F0062737F /* TableDataSource.swift in Sources */,
+				3D05C4BC21B31D200062737F /* CollectionDataSource.swift in Sources */,
 				3D9922BC218F5BB80068017A /* FileRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
