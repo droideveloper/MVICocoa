@@ -11,8 +11,8 @@ import UIKit
 
 extension UICollectionView {
 	
-	public func register<T>(types: T.Type...) where T: UICollectionViewCell {
-		
+	public func register<T>(_ types: T.Type...) where T: UICollectionViewCell {
+		register(types: types)
 	}
 	
 	private func register<T>(types: [T.Type]) where T: UICollectionViewCell {

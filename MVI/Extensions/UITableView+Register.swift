@@ -11,7 +11,7 @@ import UIKit
 
 extension UITableView {
 	
-	public func register<T>(types: T.Type...) where T: UITableViewCell {
+	public func register<T>(_ types: T.Type...) where T: UITableViewCell {
 		register(types: types)
 	}
 	
