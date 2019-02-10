@@ -15,9 +15,11 @@ public struct Idle: SyncState, Equatable { }
 public struct Operation: SyncState, Equatable {
   
   public let type: Int
-  
-  public init(_ type: Int) {
+	public let initialState: Bool
+	
+	public init(_ type: Int, _ initialState: Bool = false) {
     self.type = type
+		self.initialState = initialState
   }
   
   public static func == (lhs: Operation, rhs: Operation) -> Bool {
