@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import UIKit
 
-open class BaseTableViewController<T: Model, V: ViewModel>: UITableViewController, View where V.Model == T {
+open class BaseTableViewController<T: Model, V: ViewModel>: UITableViewController, View, Loggable where V.Model == T {
   
   public typealias ViewModel = V
   public typealias Model = T
@@ -36,26 +36,31 @@ open class BaseTableViewController<T: Model, V: ViewModel>: UITableViewControlle
   }
   
   open func attach() {
-		if let viewModel = viewModel {
-			// base attach functionality
-			viewModel.attach()
-			
-			if let refreshControl = refreshControl {
-				// will render progress state into viewProgress instance
-				disposeBag += viewModel.state()
-					.map { state in
-						if let state = state as? Operation {
-							return state == refresh
-						}
-						return false
-					}
-					.subscribe(refreshControl.rx.isRefreshing)
+		// seems more readable code base with guard
+		guard let viewModel = viewModel else {
+			fatalError("we can not find viewModel \(ViewModel.self)")
+		}
+	
+		// base attach functionality
+		viewModel.attach()
+	
+		// will render view state
+		disposeBag += viewModel.store()
+			.subscribe(onNext: render(model:))
+		
+		guard let refreshControl = refreshControl else {
+			log(.error, "\(UIRefreshControl.self) is not available in context")
+			return // we must return if we do not want it to execute
+		}
+		
+		disposeBag += viewModel.state()
+			.map { state in
+				if let state = state as? Operation {
+					return state == refresh
+				}
+				return false
 			}
-			
-			// will render view state
-			disposeBag += viewModel.store()
-				.subscribe(onNext: render(model:))
-			}
+			.subscribe(refreshControl.rx.isRefreshing)
   }
   
   open func render(model: T) {
