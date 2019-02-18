@@ -38,15 +38,17 @@ open class BaseViewController<T: Model, V: ViewModel>: UIViewController, View wh
   }
   
   open func attach() {
-		if let viewModel = viewModel {
-			// base attach functionality
-			viewModel.attach()
-			
-			// will render view state
-			disposeBag += viewModel.store()
-				.subscribe(onNext: render(model:))
-			}
 		
+		guard let viewModel = viewModel else {
+			fatalError("we can not resolve \(ViewModel.self)")
+		}
+		
+		// base attach functionality
+		viewModel.attach()
+		
+		// will render view state
+		disposeBag += viewModel.store()
+			.subscribe(onNext: render(model:))
   }
   
   open func render(model: T) {

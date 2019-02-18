@@ -35,14 +35,19 @@ open class BaseCollectionViewController<T: Model, V: ViewModel>: UICollectionVie
   }
   
   open func attach() {
-		if let viewModel = viewModel {
-			// base attach functionality
-			viewModel.attach()
-	
-			// will render view state
-			disposeBag += viewModel.store()
-				.subscribe(onNext: render(model:))
-			}
+		// this part from now on is required
+		
+		guard let viewModel = viewModel else {
+			fatalError("we can not resolve \(ViewModel.self)")
+		}
+		
+		// base attach functionality
+		viewModel.attach()
+
+		// will render view state
+		disposeBag += viewModel.store()
+			.subscribe(onNext: render(model:))
+		
   }
   
   open func render(model: T) {
