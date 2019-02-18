@@ -12,5 +12,5 @@ import Alamofire
 public protocol Requestable {
   
   var baseUrl: String { get }
-  var request: (HTTPMethod, URLConvertible) { get }
+	var request: URLRequest { get }
 }
