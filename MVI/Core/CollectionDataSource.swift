@@ -23,7 +23,7 @@ open class CollectionDataSource<D: Equatable>: NSObject, UICollectionViewDataSou
 	
 	public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identfierAt(indexPath), for: indexPath)
-		bind(cell, dataSet.get(indexPath.row))
+		bind(cell, dataSet.get(indexPath.item))
 		return cell
 	}
 	
