@@ -22,17 +22,16 @@ open class CollectionDataSource<D: Equatable>: NSObject, UICollectionViewDataSou
 	}
 	
 	public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identfierAt(indexPath), for: indexPath)
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifierAt(indexPath), for: indexPath)
 		bind(cell, dataSet.get(indexPath.item))
 		return cell
 	}
 	
-	open func identfierAt(_ indexPath: IndexPath) -> String {
+	open func identifierAt(_ indexPath: IndexPath) -> String {
 		return String.empty
 	}
 	
 	open func bind(_ cell: UICollectionViewCell, _ item: D) {
 		// override this
 	}
-	
 }
