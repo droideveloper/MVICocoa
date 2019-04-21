@@ -33,7 +33,7 @@ private let dateFormatter: DateFormatter = {
 
 public extension Loggable {
 	
-	public var isLogEnabled: Bool {
+	var isLogEnabled: Bool {
 		get {
 #if DEBUG
 			return true
@@ -43,23 +43,23 @@ public extension Loggable {
 		}
 	}
 	
-	public var classTag: String {
+	var classTag: String {
 		get {
 			return String(describing: Self.self)
 		}
 	}
 	
-	public func log(_ level: LogLevel, _ message: String, _ fn: String = #function) {
+	func log(_ level: LogLevel, _ message: String, _ fn: String = #function) {
 		if isLogEnabled {
 			print("[\(dateFormatter.string(from: Date()))]\t\(level.rawValue)/\(classTag)\t\(fn): \t\(message)")
 		}
 	}
 	
-	public func log(_ message: String, _ fn: String = #function) {
+	func log(_ message: String, _ fn: String = #function) {
 		log(.debug, message, fn)
 	}
 	
-	public func log(_ error: Error, _ fn: String = #function) {
+	func log(_ error: Error, _ fn: String = #function) {
 		log(.error, error.localizedDescription, fn)
 	}
 }
