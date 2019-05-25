@@ -22,6 +22,7 @@
 		3D0701C62180B13400467028 /* MVI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0701BC2180B13400467028 /* MVI.framework */; };
 		3D0701CB2180B13400467028 /* MVITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0701CA2180B13400467028 /* MVITests.swift */; };
 		3D0701CD2180B13400467028 /* MVI.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D0701BF2180B13400467028 /* MVI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3D156E5322990AD70089DC83 /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D156E5222990AD70089DC83 /* ObservableType+Extension.swift */; };
 		3D466FCF2229EE11008BAE21 /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D466FCE2229EE11008BAE21 /* Interceptor.swift */; };
 		3D80A199218B46E80007BC12 /* CompositeDisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D80A198218B46E80007BC12 /* CompositeDisposeBag.swift */; };
 		3D9922BC218F5BB80068017A /* FileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9922BB218F5BB80068017A /* FileRepository.swift */; };
@@ -82,6 +83,7 @@
 		3D0701C52180B13400467028 /* MVITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D0701CA2180B13400467028 /* MVITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVITests.swift; sourceTree = "<group>"; };
 		3D0701CC2180B13400467028 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D156E5222990AD70089DC83 /* ObservableType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
 		3D466FCE2229EE11008BAE21 /* Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
 		3D80A198218B46E80007BC12 /* CompositeDisposeBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeDisposeBag.swift; sourceTree = "<group>"; };
 		3D9922BB218F5BB80068017A /* FileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileRepository.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				3DDC9F6F21B6F3A2006DFACD /* UITableView+Register.swift */,
 				3DDC9F7121B6F483006DFACD /* UICollectionView+Register.swift */,
 				3DDC79BD221AE4D000976F6B /* Requestable+Extension.swift */,
+				3D156E5222990AD70089DC83 /* ObservableType+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				3D9B8D822180B33E00DF7C6B /* Event.swift in Sources */,
 				3D9B8D902180B97C00DF7C6B /* Observable+Event.swift in Sources */,
 				3D013E9D21821E6D00D1F063 /* UITableView+PropertyChangable.swift in Sources */,
+				3D156E5322990AD70089DC83 /* ObservableType+Extension.swift in Sources */,
 				3D013E9F21821EA600D1F063 /* UICollectionView+PropertyChangable.swift in Sources */,
 				3D9B8D8A2180B75000DF7C6B /* View.swift in Sources */,
 				3D80A199218B46E80007BC12 /* CompositeDisposeBag.swift in Sources */,
