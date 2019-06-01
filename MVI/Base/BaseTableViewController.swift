@@ -54,12 +54,7 @@ open class BaseTableViewController<T: Model, V: ViewModel>: UITableViewControlle
 		}
 		
 		disposeBag += viewModel.state()
-			.map { state in
-				if let state = state as? Operation {
-					return state == refresh
-				}
-				return false
-			}
+			.map { state in state ~> SyncState.refresh }
 			.subscribe(refreshControl.rx.isRefreshing)
   }
   
