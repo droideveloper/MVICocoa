@@ -12,7 +12,7 @@ import RxSwift
 extension Observable {
   
   public func async() -> Observable<Element> {
-    return self.subscribeOn(MainScheduler.asyncInstance)
+    return self.subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .userInitiated))
       .observeOn(MainScheduler.instance)
   }
 }

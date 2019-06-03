@@ -18,8 +18,8 @@ open class BaseViewModel<T: Model>: ViewModel {
   private lazy var storage = {
     return intents.asObservable()
       .toReducer()
-      .observeOn(MainScheduler.asyncInstance)
       .scan(initialState(), accumulator: { o, reducer in reducer(o) })
+			.observeOn(MainScheduler.asyncInstance)
       .replay(1)
   }()
   
