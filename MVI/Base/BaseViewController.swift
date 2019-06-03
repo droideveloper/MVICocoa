@@ -40,7 +40,7 @@ open class BaseViewController<T: Model, V: ViewModel>: UIViewController, View wh
   open func attach() {
 		
 		guard let viewModel = viewModel else {
-			fatalError("we can not resolve \(ViewModel.self)")
+			fatalError("we can not resolve \(V.self)")
 		}
 		
 		// base attach functionality

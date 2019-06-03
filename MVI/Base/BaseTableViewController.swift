@@ -38,7 +38,7 @@ open class BaseTableViewController<T: Model, V: ViewModel>: UITableViewControlle
   open func attach() {
 		// seems more readable code base with guard
 		guard let viewModel = viewModel else {
-			fatalError("we can not find viewModel \(ViewModel.self)")
+			fatalError("we can not find viewModel \(V.self)")
 		}
 	
 		// base attach functionality

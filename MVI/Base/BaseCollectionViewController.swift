@@ -38,7 +38,7 @@ open class BaseCollectionViewController<T: Model, V: ViewModel>: UICollectionVie
 		// this part from now on is required
 		
 		guard let viewModel = viewModel else {
-			fatalError("we can not resolve \(ViewModel.self)")
+			fatalError("we can not resolve \(V.self)")
 		}
 		
 		// base attach functionality

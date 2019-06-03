@@ -40,7 +40,7 @@ public enum SyncState: CustomStringConvertible, Equatable {
 			}
 		}
 	}
-	
+		
 	// some pre defined content
 	public static let refresh = 0x01
 	public static let loadMore = 0x02
