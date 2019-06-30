@@ -91,7 +91,7 @@ public class ObservableList<T> where T: Equatable {
   
   public func clear() {
     if !dataSet.isEmpty {
-      let size = dataSet.count - 1
+      let size = dataSet.count
       dataSet.removeAll()
       notifyRemove(0, size: size)
     }
