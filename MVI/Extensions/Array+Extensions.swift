@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public extension Array {
 	
 	func scan<T>(value: T, block: @escaping (Element) -> T) -> T {

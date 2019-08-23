@@ -13,21 +13,22 @@ import RxSwift
 open class CollectionDataSource<D: Equatable>: NSObject, UICollectionViewDataSource {
 	
 	public var dataSet: ObservableList<D>
-	private var observer: AnyObserver<Bool>? = nil
-	private var lastCount: Int
+	private var emitter: AnyObserver<Bool>? = nil
+	private var lastCount: AtomicProperty<Int>
 	
 	public lazy var loadMoreObservable: Observable<Bool> = {
-		return Observable.create { observer in
-			self.observer = observer
+		return Observable.create { emitter in
+			self.emitter = emitter
 			return Disposables.create()
 		}
 	}()
 	
-	private let LOAD_MORE_DISTANCE = 5
+	private let loadMoreDistance: Int
 	
-	public init(dataSet: ObservableList<D>) {
+	public init(dataSet: ObservableList<D>, _ loadMoreDistance: Int = 5) {
 		self.dataSet = dataSet
-		self.lastCount = 0
+		self.lastCount = AtomicProperty<Int>(defaultValue: dataSet.count)
+		self.loadMoreDistance = loadMoreDistance
 	}
 
 	public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -38,12 +39,13 @@ open class CollectionDataSource<D: Equatable>: NSObject, UICollectionViewDataSou
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifierAt(indexPath), for: indexPath)
 		bind(cell, dataSet.get(indexPath.item))
 		
+		let lastCount = self.lastCount.value
 		if lastCount != dataSet.count {
-			let diff = dataSet.count - indexPath.item
-			let hasLoadMore = diff <= LOAD_MORE_DISTANCE
+			let diff = dataSet.count - indexPath.row
+			let hasLoadMore = diff <= loadMoreDistance
 			if hasLoadMore {
-				lastCount = dataSet.count
-				observer?.onNext(hasLoadMore)
+				self.lastCount.value = dataSet.count
+				emitter?.onNext(hasLoadMore)
 			}
 		}
 		

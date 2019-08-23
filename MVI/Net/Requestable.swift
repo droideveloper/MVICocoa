@@ -13,4 +13,5 @@ public protocol Requestable {
   
   var baseUrl: String { get }
 	var request: URLRequest { get }
+	var interceptors: [Interceptor]? { get }
 }

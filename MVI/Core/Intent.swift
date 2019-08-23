@@ -10,6 +10,7 @@ import Foundation
 import RxSwift
 
 public protocol Intent {}
+
 class EmptyIntent: Intent { }
 
 open class ReducerIntent<T>: Intent {
