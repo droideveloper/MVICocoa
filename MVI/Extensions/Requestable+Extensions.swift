@@ -7,33 +7,55 @@
 //
 
 import Foundation
+import Alamofire
+
+private let JEncoder = JSONEncoder()
+
+public let MEDIA_TYPE_JSON = "application/json; charset=UTF-8"
+public let CONTENT_TYPE = "Content-Type"
 
 public extension Requestable {
 	
-	internal func createRequest<T>(from urlString: String, method: HttpMethod = .get, payload: T? = nil, serializer: JSONEncoder = JSONEncoder()) -> URLRequest where T: Encodable {
-		guard let url = URL(string: urlString) else {
-			fatalError("\(urlString) is not valid")
+	func create<T>(url: URLConvertible, httpMethod: HTTPMethod, body: T, contentType: String = MEDIA_TYPE_JSON, inteceptors: [Interceptor]? = nil) -> URLRequest where T: Encodable {
+		var request = create(url: url, httpMethod: httpMethod)
+		request.addValue(contentType, forHTTPHeaderField: CONTENT_TYPE)
+		if let interceptors = inteceptors {
+			request = interceptors.scan(value: request) { interceptor in
+				return interceptor.proceed(request)
+			}
 		}
-		var request = URLRequest(url: url)
-		request.httpMethod = method.description
-		if let payload = payload {
-			do {
-				request.httpBody = try serializer.encode(payload)
-			} catch {
-				#if DEBUG
-					fatalError("serialization error \(error.localizedDescription)")
-				#endif
+		request.httpBody = try? JEncoder.encode(body)
+		return request
+	}
+	
+	func create<T>(url: URLConvertible, httpMethod: HTTPMethod, body: T, contentType: String = MEDIA_TYPE_JSON, interceptor: Interceptor? = nil) -> URLRequest where T: Encodable {
+		var request = create(url: url, httpMethod: httpMethod)
+		request.addValue(contentType, forHTTPHeaderField: CONTENT_TYPE)
+		if let interceptor = interceptor {
+			request = interceptor.proceed(request)
+		}
+		request.httpBody = try? JEncoder.encode(body)
+		return request
+	}
+	
+	func create(url: URLConvertible, httpMethod: HTTPMethod) -> URLRequest {
+		return try! URLRequest(url: url, method: httpMethod)
+	}
+	
+	func create(url: URLConvertible, httpMethod: HTTPMethod, interceptors: [Interceptor]? = nil) -> URLRequest {
+		var request = try! URLRequest(url: url, method: httpMethod)
+		if let interceptors = interceptors {
+			request = interceptors.scan(value: request) { interceptor in
+				return interceptor.proceed(request)
 			}
 		}
 		return request
 	}
 	
-	func request<T>(from urlString: String, method: HttpMethod = .get, interceptors: [Interceptor]? = nil, payload: T? = nil, serializer: JSONEncoder = JSONEncoder()) -> URLRequest where T: Encodable {
-		var request = createRequest(from: urlString, method: method, payload: payload, serializer: serializer)
-		if let interceptors = interceptors {
-			request = interceptors.scan(value: request) { interceptor in
-				return interceptor.intercept(request)
-			}
+	func create(url: URLConvertible, httpMethod: HTTPMethod, interceptor: Interceptor? = nil) -> URLRequest {
+		var request = try! URLRequest(url: url, method: httpMethod)
+		if let interceptor = interceptor {
+			request = interceptor.proceed(request)
 		}
 		return request
 	}

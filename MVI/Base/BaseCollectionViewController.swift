@@ -11,11 +11,9 @@ import RxSwift
 import RxCocoa
 import UIKit
 
-open class BaseCollectionViewController<T: Model, V: ViewModel>: UICollectionViewController, View where V.Model == T {
-  public typealias ViewModel = V
-  public typealias Model = T
+open class BaseCollectionViewController<T: Model, V: ViewModel>: UICollectionViewController where V.Model == T {
 	
-  public var viewModel: V?
+  public var viewModel: V!
   
   private let events = PublishRelay<Event>()
 	public let disposeBag = CompositeDisposeBag()
@@ -30,33 +28,26 @@ open class BaseCollectionViewController<T: Model, V: ViewModel>: UICollectionVie
 		attach()
 	}
   
-  open func setUp() {
-    // TODO do your set up
-  }
+  open func setUp() { /* no opt*/ }
   
   open func attach() {
-		// this part from now on is required
-		
-		guard let viewModel = viewModel else {
-			fatalError("we can not resolve \(V.self)")
-		}
-		
 		// base attach functionality
 		viewModel.attach()
 
 		// will render view state
 		disposeBag += viewModel.store()
 			.subscribe(onNext: render(model:))
-		
   }
   
-  open func render(model: T) {
-    // TODO implement
-  }
+  open func render(model: T) { /*no opt*/ }
+	
+	open func detach() {
+		disposeBag.clear()
+		viewModel.detach()
+	}
 	
 	open override func viewWillDisappear(_ animated: Bool) {
-		disposeBag.clear()
-		viewModel?.detach()
+		detach()
 		super.viewWillDisappear(animated)
 	}
 	

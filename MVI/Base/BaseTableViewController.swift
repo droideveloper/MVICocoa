@@ -11,12 +11,9 @@ import RxSwift
 import RxCocoa
 import UIKit
 
-open class BaseTableViewController<T: Model, V: ViewModel>: UITableViewController, View, Loggable where V.Model == T {
-  
-  public typealias ViewModel = V
-  public typealias Model = T
+open class BaseTableViewController<T: Model, V: ViewModel>: UITableViewController, Loggable where V.Model == T {
 
-  public var viewModel: V?
+  public var viewModel: V!
   
   private let events = PublishRelay<Event>()
 	public let disposeBag = CompositeDisposeBag()
@@ -36,11 +33,6 @@ open class BaseTableViewController<T: Model, V: ViewModel>: UITableViewControlle
   }
   
   open func attach() {
-		// seems more readable code base with guard
-		guard let viewModel = viewModel else {
-			fatalError("we can not find viewModel \(V.self)")
-		}
-	
 		// base attach functionality
 		viewModel.attach()
 	
@@ -58,13 +50,15 @@ open class BaseTableViewController<T: Model, V: ViewModel>: UITableViewControlle
 			.subscribe(refreshControl.rx.isRefreshing)
   }
   
-  open func render(model: T) {
-    // TODO implement
-  }
+  open func render(model: T) { /*no opt*/ }
+	
+	open func detach() {
+		disposeBag.clear()
+		viewModel.detach()
+	}
 	
 	open override func viewWillDisappear(_ animated: Bool) {
-		disposeBag.clear()
-		viewModel?.detach()
+		detach()
 		super.viewWillDisappear(animated)
 	}
   
