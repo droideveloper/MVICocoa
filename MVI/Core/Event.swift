@@ -11,11 +11,11 @@ import Swinject
 
 open class Event {
 	
+	private static let emptyIntent = EmptyIntent()
+	
 	public init() { }
 	
-  private let emptyIntent = EmptyIntent()
-  
   open func toIntent(container: Container?) -> Intent {
-    return emptyIntent
+    return Event.emptyIntent
   }
 }
