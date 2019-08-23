@@ -12,16 +12,12 @@ import RxSwift
 import RxCocoa
 import Swinject
 
-open class BaseViewController<T: Model, V: ViewModel>: UIViewController, View where V.Model == T {
-  
-  public typealias ViewModel = V
-  public typealias Model = T
+open class BaseViewController<T: Model, V: ViewModel>: UIViewController where V.Model == T {
     
-  public var viewModel: V?
+  public var viewModel: V!
   
   private let events = PublishRelay<Event>()
 	public let disposeBag = CompositeDisposeBag()
-	
 	
 	open override func viewDidLoad() {
 		super.viewDidLoad()
@@ -33,16 +29,9 @@ open class BaseViewController<T: Model, V: ViewModel>: UIViewController, View wh
     attach()
   }
   
-  open func setUp() {
-    // TODO do your set up
-  }
+  open func setUp() { /*no opt*/ }
   
   open func attach() {
-		
-		guard let viewModel = viewModel else {
-			fatalError("we can not resolve \(V.self)")
-		}
-		
 		// base attach functionality
 		viewModel.attach()
 		
@@ -51,13 +40,15 @@ open class BaseViewController<T: Model, V: ViewModel>: UIViewController, View wh
 			.subscribe(onNext: render(model:))
   }
   
-  open func render(model: T) {
-    // TODO implement
-  }
+  open func render(model: T) { /*no opt*/ }
+	
+	open func detach() {
+		disposeBag.clear()
+		viewModel.detach()
+	}
 	
 	open override func viewWillDisappear(_ animated: Bool) {
-		disposeBag.clear()
-		viewModel?.detach()
+		detach()
 		super.viewWillDisappear(animated)
 	}
 	

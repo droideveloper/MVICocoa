@@ -11,13 +11,10 @@ import RxSwift
 import Swinject
 
 public protocol View {
-  associatedtype ViewModel
-  associatedtype Model
-  
   var container: Container? { get }
   
   func setUp()
   func attach()
-  func render(model: Model)
+	func detach()
   func viewEvents() -> Observable<Event>
 }

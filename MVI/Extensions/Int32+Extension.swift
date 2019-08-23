@@ -10,7 +10,7 @@ import Foundation
 
 extension Int32 {
 	
-   public var  alpha:  Int {
+   public var alpha: Int {
     get {
       return Int(self >> 24) & 0xFF
     }
