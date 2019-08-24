@@ -11,5 +11,5 @@ import RxSwift
 
 public protocol Concurrency {
 	
-	var dispatchScheduler: SerialDispatchQueueScheduler { get }
+	var dispatchScheduler: SchedulerType { get }
 }
