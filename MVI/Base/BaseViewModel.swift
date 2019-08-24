@@ -13,19 +13,23 @@ import RxCocoa
 open class BaseViewModel<T: Model>: ViewModel {
   
   public typealias Model = T
-  
+
+	private let concurrency: Concurrency
+
   private let intents = PublishRelay<Intent>()
   private lazy var storage = {
     return intents.asObservable()
       .toReducer()
       .scan(initialState(), accumulator: { o, reducer in reducer(o) })
-			.observeOn(MainScheduler.asyncInstance)
+			.observeOn(concurrency.dispatchScheduler)
       .replay(1)
   }()
   
   public let disposeBag = CompositeDisposeBag()
   
-  public init() { }
+  public init() {
+		self.concurrency = ConcurrencyImp.shared
+	}
 	
 	open func initialState() -> T {
 		return Model.empty

@@ -56,6 +56,8 @@
 		3DDC79DE221B3D0A00976F6B /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDC79DD221B3D0A00976F6B /* BaseTabBarController.swift */; };
 		3DDC9F7021B6F3A2006DFACD /* UITableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDC9F6F21B6F3A2006DFACD /* UITableView+Register.swift */; };
 		3DDC9F7221B6F483006DFACD /* UICollectionView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDC9F7121B6F483006DFACD /* UICollectionView+Register.swift */; };
+		3DFF871E2311362D00910755 /* Concurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF871D2311362D00910755 /* Concurrency.swift */; };
+		3DFF87202311364300910755 /* ConcurrencyImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF871F2311364300910755 /* ConcurrencyImp.swift */; };
 		B376220C004A7D5051571AC3 /* Pods_MVI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB096F379AD3EE27723196F /* Pods_MVI.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +124,8 @@
 		3DDC79DD221B3D0A00976F6B /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		3DDC9F6F21B6F3A2006DFACD /* UITableView+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Register.swift"; sourceTree = "<group>"; };
 		3DDC9F7121B6F483006DFACD /* UICollectionView+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Register.swift"; sourceTree = "<group>"; };
+		3DFF871D2311362D00910755 /* Concurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concurrency.swift; sourceTree = "<group>"; };
+		3DFF871F2311364300910755 /* ConcurrencyImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrencyImp.swift; sourceTree = "<group>"; };
 		7A7CF3612E813103A6285A1E /* Pods-MVI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVI/Pods-MVI.debug.xcconfig"; sourceTree = "<group>"; };
 		87A76E2CAE2D90E0C4A61187 /* Pods-MVI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVI.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVI/Pods-MVI.release.xcconfig"; sourceTree = "<group>"; };
 		91F93BBD6807D8DC996EB40F /* Pods-MVITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVITests/Pods-MVITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -269,6 +273,8 @@
 				3DDA0F8F2310670F00981F46 /* Lock.swift */,
 				3DDA0F912310672500981F46 /* SpinLock.swift */,
 				3DDA0F93231067AD00981F46 /* AtomicProperty.swift */,
+				3DFF871D2311362D00910755 /* Concurrency.swift */,
+				3DFF871F2311364300910755 /* ConcurrencyImp.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -334,7 +340,6 @@
 				3D0701C12180B13400467028 /* Sources */,
 				3D0701C22180B13400467028 /* Frameworks */,
 				3D0701C32180B13400467028 /* Resources */,
-				6888B30D0C83C00C19055852 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -401,38 +406,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6888B30D0C83C00C19055852 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MVITests/Pods-MVITests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MVITests/Pods-MVITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		89DD7C798FD1960743F4FB60 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -491,6 +464,7 @@
 				3DD898E021818A1600DBBF1B /* Int32+Extension.swift in Sources */,
 				3D013E522181C8B600D1F063 /* BaseCollectionViewController.swift in Sources */,
 				3D9B8D9D2180BF9800DF7C6B /* Requestable.swift in Sources */,
+				3DFF871E2311362D00910755 /* Concurrency.swift in Sources */,
 				3D9B8D862180B55300DF7C6B /* SyncState.swift in Sources */,
 				3D013E472181ADD300D1F063 /* BaseViewController.swift in Sources */,
 				3D013E9921821D5A00D1F063 /* PropertyChangable.swift in Sources */,
@@ -500,6 +474,7 @@
 				3DDC9F7221B6F483006DFACD /* UICollectionView+Register.swift in Sources */,
 				3D9B8D822180B33E00DF7C6B /* Event.swift in Sources */,
 				3D9B8D902180B97C00DF7C6B /* Observable+Event.swift in Sources */,
+				3DFF87202311364300910755 /* ConcurrencyImp.swift in Sources */,
 				3D013E9D21821E6D00D1F063 /* UITableView+PropertyChangable.swift in Sources */,
 				3D42827822A50BA300820C52 /* MVIError.swift in Sources */,
 				3D156E5322990AD70089DC83 /* ObservableType+Extension.swift in Sources */,
