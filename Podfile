@@ -7,8 +7,8 @@ target 'MVI' do
 
     pod 'RxSwift', '~> 5.0.0'
     pod 'RxCocoa', '~> 5.0.0'
-    pod 'Alamofire'
-    pod 'AlamofireImage'
+    pod 'Alamofire', '~> 4.8.2'
+    pod 'AlamofireImage', '~> 3.5.2'
     pod 'Swinject', '~> 2.6.2'
 
   # Pods for MVI
