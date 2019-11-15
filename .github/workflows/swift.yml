@@ -1,0 +1,15 @@
+name: Automation
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: macOS-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: pod
+      run: pod update
+    - name: build
+      run: xcodebuild build
