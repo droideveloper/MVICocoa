@@ -12,4 +12,4 @@ jobs:
     - name: pod
       run: pod update
     - name: build
-      run: xcodebuild -scheme iOS  build
+      run: xcodebuild build
