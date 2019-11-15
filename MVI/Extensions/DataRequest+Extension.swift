@@ -58,4 +58,22 @@ extension DataRequest {
       }
     }
   }
+	
+	public func serialize<T: Decodable>(decoder: JSONDecoder) -> Observable<T> {
+		return Observable.create { emitter in
+			let request = self.serialize(decoder: decoder, completion: { (response: DataResponse<T>) in
+				switch response.result {
+				case .success(let data):
+					emitter.onNext(data)
+					emitter.onCompleted()
+					break
+				case .failure(let error):
+					emitter.onError(error)
+				}
+			})
+			return Disposables.create {
+				request.cancel()
+			}
+		}
+	}
 }
