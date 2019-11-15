@@ -9,11 +9,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: Pod Update
+      run: pod update  
     - name: Build
-      run: 
-        pod update
-        swift build -v
+      run:  swift build -v
     - name: Run tests
-      run: 
-        pod update
-        swift test -v
+      run:  swift test -v
