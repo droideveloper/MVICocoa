@@ -1,4 +1,4 @@
-name: Swift
+name: Automation
 
 on: [push]
 
@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Pod Update
-      run: pod update  
     - name: Build
-      run:  xcodebuild -project MVI.xcodeproj -alltargets -configuration Debug
+      run: |
+      pod update  
+      xcodebuild -scheme iOS  build
