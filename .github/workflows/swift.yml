@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Build
-      run: |
-      pod update  
-      xcodebuild -scheme iOS  build
+    - name: pod
+      run: pod update
+    - name: build
+      run: xcodebuild -scheme iOS  build
