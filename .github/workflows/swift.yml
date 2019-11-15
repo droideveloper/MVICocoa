@@ -12,6 +12,4 @@ jobs:
     - name: Pod Update
       run: pod update  
     - name: Build
-      run:  swift build -v
-    - name: Run tests
-      run:  swift test -v
+      run:  xcodebuild -project MVI.xcodeproj -alltargets -configuration Release
