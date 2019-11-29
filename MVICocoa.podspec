@@ -138,6 +138,6 @@ MVI architecture implementation basic and needs for iOS framework to create vali
   s.dependency "RxCocoa"
   s.dependency "Alamofire"
   s.dependency "AlamofireImage"
-  s.dependency "Swinject"	
+  s.dependency "Swinject", "~> 2.6.2"	
 
 end
