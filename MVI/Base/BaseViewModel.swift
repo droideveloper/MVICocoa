@@ -14,35 +14,35 @@ open class BaseViewModel<T: Model>: ViewModel {
   
   public typealias Model = T
 
-	private let concurrency: Concurrency
+  private let concurrency: Concurrency
 
   private let intents = PublishRelay<Intent>()
   private lazy var storage = {
     return intents.asObservable()
       .toReducer()
       .scan(initialState(), accumulator: { o, reducer in reducer(o) })
-			.observeOn(concurrency.dispatchScheduler)
+      .observeOn(concurrency.dispatchScheduler)
       .replay(1)
   }()
   
   public let disposeBag = CompositeDisposeBag()
   
   public init() {
-		self.concurrency = ConcurrencyImp.shared
-	}
+    self.concurrency = ConcurrencyImp.shared
+  }
 	
-	open func initialState() -> T {
-		return Model.empty
-	}
+  open func initialState() -> T {
+    return Model.empty
+  }
 	
   open func attach() {
     // connect storage
     disposeBag += storage.connect()
   }
 	
-	open func detach() {
-		disposeBag.clear()
-	}
+  open func detach() {
+    disposeBag.clear()
+  }
 	
   open func state() -> Observable<SyncState> {
     return storage.map { model in

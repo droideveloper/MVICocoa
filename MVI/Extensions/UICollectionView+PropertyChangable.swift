@@ -11,17 +11,17 @@ import UIKit
 
 extension UICollectionView: PropertyChangable {
   
-  public func notifyItemsChanged(_ index: Int, size: Int) {
+  public func notifyItemsChanged(_ index: Int, size: Int, forKey: String) {
     let paths = toIndexPath(index: index, size: size)
     self.reloadItems(at: paths)
   }
   
-  public func notifyItemsRemoved(_ index: Int, size: Int) {
+  public func notifyItemsRemoved(_ index: Int, size: Int, forKey: String) {
     let paths = toIndexPath(index: index, size: size)
     self.deleteItems(at: paths)
   }
   
-  public func notifyItemsInserted(_ index: Int, size: Int) {
+  public func notifyItemsInserted(_ index: Int, size: Int, forKey: String) {
     let paths = toIndexPath(index: index, size: size)
 		if index == 0 {
 			self.reloadData()

@@ -10,7 +10,7 @@ import Foundation
 
 public protocol PropertyChangable: class {
   
-  func notifyItemsRemoved(_ index: Int, size: Int)
-  func notifyItemsInserted(_ index: Int, size: Int)
-  func notifyItemsChanged(_ index: Int, size: Int)
+  func notifyItemsRemoved(_ index: Int, size: Int, forKey: String)
+  func notifyItemsInserted(_ index: Int, size: Int, forKey: String)
+  func notifyItemsChanged(_ index: Int, size: Int, forKey: String)
 }

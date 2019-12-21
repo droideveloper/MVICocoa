@@ -16,17 +16,17 @@ open class BaseTableViewController<T: Model, V: ViewModel>: UITableViewControlle
   public var viewModel: V!
   
   private let events = PublishRelay<Event>()
-	public let disposeBag = CompositeDisposeBag()
+  public let disposeBag = CompositeDisposeBag()
   
   open override func viewDidLoad() {
     super.viewDidLoad()
     setUp()
   }
 	
-	open override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		attach()
-	}
+  open override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    attach()
+  }
   
   open func setUp() {
     // TODO do your set up
@@ -34,33 +34,33 @@ open class BaseTableViewController<T: Model, V: ViewModel>: UITableViewControlle
   
   open func attach() {
 		// base attach functionality
-		viewModel.attach()
-	
-		// will render view state
-		disposeBag += viewModel.store()
-			.subscribe(onNext: render(model:))
-		
-		guard let refreshControl = refreshControl else {
-			log(.error, "\(UIRefreshControl.self) is not available in context")
-			return // we must return if we do not want it to execute
-		}
-		
-		disposeBag += viewModel.state()
-			.map { state in state ~> SyncState.refresh }
-			.subscribe(refreshControl.rx.isRefreshing)
+    viewModel.attach()
+
+    // will render view state
+    disposeBag += viewModel.store()
+      .subscribe(onNext: render(model:))
+    
+    guard let refreshControl = refreshControl else {
+      log(.error, "\(UIRefreshControl.self) is not available in context")
+      return // we must return if we do not want it to execute
+    }
+    
+    disposeBag += viewModel.state()
+      .map { state in state ~> SyncState.refresh }
+      .subscribe(refreshControl.rx.isRefreshing)
   }
   
   open func render(model: T) { /*no opt*/ }
 	
-	open func detach() {
-		disposeBag.clear()
-		viewModel.detach()
-	}
+  open func detach() {
+    disposeBag.clear()
+    viewModel.detach()
+  }
 	
-	open override func viewWillDisappear(_ animated: Bool) {
-		detach()
-		super.viewWillDisappear(animated)
-	}
+  open override func viewWillDisappear(_ animated: Bool) {
+    detach()
+    super.viewWillDisappear(animated)
+  }
   
   open func viewEvents() -> Observable<Event> {
     return events.share()

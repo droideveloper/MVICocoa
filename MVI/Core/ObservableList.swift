@@ -25,8 +25,12 @@ public class ObservableList<T> where T: Equatable {
       return dataSet.isEmpty
     }
   }
+  
+  private let forKey: String
 	
-	public init() { }
+  public init(_ forKey: String) {
+    self.forKey = forKey
+  }
   
   public func register(_ callback: PropertyChangable) {
     let index = protocols.firstIndex(where: { listener in
@@ -117,15 +121,15 @@ public class ObservableList<T> where T: Equatable {
 	}
   
   private func notifyInsert(_ index: Int, size: Int) {
-    protocols.forEach { listener in listener.notifyItemsInserted(index, size: size) }
+    protocols.forEach { listener in listener.notifyItemsInserted(index, size: size, forKey: forKey) }
   }
   
   private func notifyRemove(_ index: Int, size: Int) {
-    protocols.forEach { listener in listener.notifyItemsRemoved(index, size: size) }
+    protocols.forEach { listener in listener.notifyItemsRemoved(index, size: size, forKey: forKey) }
   }
   
   private func notifyChange(_ index: Int, size: Int) {
-    protocols.forEach { listener in listener.notifyItemsChanged(index, size: size) }
+    protocols.forEach { listener in listener.notifyItemsChanged(index, size: size, forKey: forKey) }
   }
 }
 

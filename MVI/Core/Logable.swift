@@ -48,6 +48,10 @@ public extension Loggable {
 			return String(describing: Self.self)
 		}
 	}
+  
+  func escape(_ name: String = #file) {
+  
+  }
 	
 	func log(_ level: LogLevel, _ message: String, _ fn: String = #function) {
 		if isLogEnabled {
