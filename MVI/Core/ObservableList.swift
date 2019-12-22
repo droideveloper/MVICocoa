@@ -28,7 +28,7 @@ public class ObservableList<T> where T: Equatable {
   
   private let forKey: String
 	
-  public init(_ forKey: String) {
+  public init(_ forKey: String = #file) {
     self.forKey = forKey
   }
   
