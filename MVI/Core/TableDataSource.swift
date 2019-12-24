@@ -53,19 +53,14 @@ open class TableDataSource<D: Equatable>: NSObject, UITableViewDataSource, UITab
   
   public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath:IndexPath) {
     let identifierForPosition = identifierAt(indexPath)
-    if (cacheManager.height(forKey: identifierForPosition) != CGFloat.nan) {
-      cacheManager.height(forKey: identifierForPosition, height: cell.frame.size.height)
-    }
+    cacheManager.height(forKey: identifierForPosition, height: cell.frame.size.height)
   }
   
   public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
     let identifierForPosition = identifierAt(indexPath)
-    if cacheManager.height(forKey: identifierForPosition) != CGFloat.nan {
-      let expectedSize = cacheManager.height(forKey: identifierForPosition)
-      if expectedSize != CGFloat.nan {
-        return expectedSize
-      }
-      return UITableView.automaticDimension
+    let expectedSize = cacheManager.height(forKey: identifierForPosition)
+    if expectedSize != CGFloat.nan {
+      return expectedSize
     }
     return UITableView.automaticDimension
   }
