@@ -60,6 +60,7 @@
 		3DFF87202311364300910755 /* ConcurrencyImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF871F2311364300910755 /* ConcurrencyImp.swift */; };
 		7022E6B723AE354F00C82A69 /* TableViewCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7022E6B623AE354F00C82A69 /* TableViewCache.swift */; };
 		7022E6B923AE42DD00C82A69 /* TableViewCacheImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7022E6B823AE42DD00C82A69 /* TableViewCacheImp.swift */; };
+		705D130423B2805C007D3A74 /* Variable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705D130323B2805C007D3A74 /* Variable.swift */; };
 		B376220C004A7D5051571AC3 /* Pods_MVI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB096F379AD3EE27723196F /* Pods_MVI.framework */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +131,7 @@
 		3DFF871F2311364300910755 /* ConcurrencyImp.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ConcurrencyImp.swift; sourceTree = "<group>"; tabWidth = 2; };
 		7022E6B623AE354F00C82A69 /* TableViewCache.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = TableViewCache.swift; sourceTree = "<group>"; tabWidth = 2; };
 		7022E6B823AE42DD00C82A69 /* TableViewCacheImp.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = TableViewCacheImp.swift; sourceTree = "<group>"; tabWidth = 2; };
+		705D130323B2805C007D3A74 /* Variable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variable.swift; sourceTree = "<group>"; };
 		7A7CF3612E813103A6285A1E /* Pods-MVI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVI/Pods-MVI.debug.xcconfig"; sourceTree = "<group>"; };
 		87A76E2CAE2D90E0C4A61187 /* Pods-MVI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVI.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVI/Pods-MVI.release.xcconfig"; sourceTree = "<group>"; };
 		91F93BBD6807D8DC996EB40F /* Pods-MVITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVITests/Pods-MVITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				3DFF871F2311364300910755 /* ConcurrencyImp.swift */,
 				7022E6B623AE354F00C82A69 /* TableViewCache.swift */,
 				7022E6B823AE42DD00C82A69 /* TableViewCacheImp.swift */,
+				705D130323B2805C007D3A74 /* Variable.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				3D466FCF2229EE11008BAE21 /* Interceptor.swift in Sources */,
 				3D11D34E22A26A3000E3245E /* Array+Extensions.swift in Sources */,
 				7022E6B923AE42DD00C82A69 /* TableViewCacheImp.swift in Sources */,
+				705D130423B2805C007D3A74 /* Variable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

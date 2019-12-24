@@ -14,7 +14,7 @@ public class TableViewCacheImp: TableViewCache {
   public static let shared: TableViewCache = TableViewCacheImp()
   
   private var animationCache: [String: UITableView.RowAnimation] = Dictionary()
-  private var heightCache: [String: CGFloat] = Dictionary()
+  private var heightCache: [String: Float] = Dictionary()
   
   private init() {}
   
@@ -33,14 +33,14 @@ public class TableViewCacheImp: TableViewCache {
     animationCache.removeAll()
   }
   
-  public func height(forKey: String) -> CGFloat {
+  public func height(forKey: String) -> Float {
     guard let item = heightCache[forKey] else {
-      return CGFloat.nan
+      return Float.nan
     }
     return item
   }
   
-  public func height(forKey: String, height: CGFloat) {
+  public func height(forKey: String, height: Float) {
     heightCache[forKey] = height
   }
   
