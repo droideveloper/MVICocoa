@@ -13,7 +13,7 @@ public protocol TableViewCache {
   func animation(forKey: String, animation: UITableView.RowAnimation)
   func invalidateAnimations()
   
-  func height(forKey: String) -> Float
-  func height(forKey: String, height: Float)
+  func height(forKey: String) -> CGFloat
+  func height(forKey: String, height: CGFloat)
   func invalidateHeights()
 }
