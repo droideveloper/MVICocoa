@@ -61,7 +61,11 @@ open class TableDataSource<D: Equatable>: NSObject, UITableViewDataSource, UITab
   public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
     let identifierForPosition = identifierAt(indexPath)
     if cacheManager.height(forKey: identifierForPosition) != CGFloat.nan {
-      return cacheManager.height(forKey: identifierForPosition)
+      let expectedSize = cacheManager.height(forKey: identifierForPosition)
+      if expectedSize != CGFloat.nan {
+        return expectedSize
+      }
+      return UITableView.automaticDimension
     }
     return UITableView.automaticDimension
   }
