@@ -14,11 +14,21 @@ public class ConcurrencyImp: Concurrency {
 	
 	public static let shared: Concurrency = ConcurrencyImp()
 	
-	public var dispatchScheduler: SerialDispatchQueueScheduler {
+  public var dispatcher: SchedulerType {
+    get {
+      return self._dispatcher
+    }
+  }
+  
+	public var dispatchScheduler: SchedulerType {
 		get {
-			return MainScheduler.asyncInstance
+      return MainScheduler.asyncInstance
 		}
 	}
 	
-	private init() { }
+  private let _dispatcher: SchedulerType
+  
+	private init() {
+    self._dispatcher = ConcurrentDispatchQueueScheduler(qos: .userInitiated)
+  }
 }

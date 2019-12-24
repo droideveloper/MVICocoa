@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-public class Variable<T> where T: Equatable {
+public class Value<T> where T: Equatable {
   
   private var _value: T
   

@@ -17,4 +17,13 @@ extension ObservableType {
 				.map { t in	return DispatchTimeInterval.seconds(delay * t) }
 		}
 	}
+  
+  func applyResource<T>() -> Observable<Resource<T>> where T: Codable, Element == Response<T> {
+    return map { response -> Resource<T> in
+      if response.code ?? -1 >= 200, response.code ?? -1 <= 299 {
+        return .success(response.code, response.data, response.cursor)
+      }
+      return .failure(response.code, response.message, response.messageFriendly)
+    }.onErrorRetry()
+  }
 }

@@ -9,6 +9,8 @@
 import Foundation
 import Swinject
 
+public let emptyEvent = Event()
+
 open class Event {
 	
 	private static let emptyIntent = EmptyIntent()

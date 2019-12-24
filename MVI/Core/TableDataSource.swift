@@ -14,14 +14,12 @@ open class TableDataSource<D: Equatable>: NSObject, UITableViewDataSource, UITab
 	
 	public var dataSet: ObservableList<D>
   
-  private lazy var cacheManager: TableViewCache = {
-    TableViewCacheImp.shared
-  }()
+  private var cacheForSize = Dictionary<String, CGFloat>()
   
 	private var emitter: AnyObserver<Bool>? = nil
 	private var lastCount: AtomicProperty<Int>
   
-  private var selectionEmitter: AnyObserver<D>? = nil
+  private var selectionEmitter: AnyObserver<Event>? = nil
 
 	public lazy var loadMoreObservable: Observable<Bool> = {
 		return Observable.create { emitter in
@@ -30,21 +28,22 @@ open class TableDataSource<D: Equatable>: NSObject, UITableViewDataSource, UITab
 		}
 	}()
   
-  public lazy var selectionObservable: Observable<D> = {
-    return Observable<D>.create { emitter in
+  // should I call this event so that I can register it into view spec
+  public lazy var selectionObservable: Observable<Event> = {
+    return Observable<Event>.create { emitter in
       self.selectionEmitter = emitter
       return Disposables.create()
     }
   }()
 	
 	private let loadMoreDistance: Int
+  private let dispatch: (IndexPath, D) -> Event
   
-  public init(dataSet: ObservableList<D>, _ loadMoreDistance: Int = 5) {
+  public init(dataSet: ObservableList<D>, _ loadMoreDistance: Int = 5, _ dispatch: @escaping (IndexPath, D) -> Event = {_, _ in return emptyEvent }) {
 		self.dataSet = dataSet
 		self.lastCount = AtomicProperty<Int>(defaultValue: dataSet.count)
 		self.loadMoreDistance = loadMoreDistance
-    super.init()
-    self.cacheManager.invalidateHeights() // we need to invalidate cache for this key
+    self.dispatch = dispatch
 	}
 	
 	public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,21 +52,20 @@ open class TableDataSource<D: Equatable>: NSObject, UITableViewDataSource, UITab
   
   public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath:IndexPath) {
     let identifierForPosition = identifierAt(indexPath)
-    cacheManager.height(forKey: identifierForPosition, height: cell.frame.size.height)
+    cacheForSize[identifierForPosition] = cell.frame.size.height
   }
   
   public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
     let identifierForPosition = identifierAt(indexPath)
-    let expectedSize = cacheManager.height(forKey: identifierForPosition)
-    if expectedSize.isNaN {
+    guard let cacheSize = cacheForSize[identifierForPosition] else {
       return UITableView.automaticDimension
     }
-    return expectedSize
+    return cacheSize
   }
   
   public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let item = dataSet.get(indexPath.row)
-    selectionEmitter?.onNext(item)
+    selectionEmitter?.onNext(dispatch(indexPath, item))
   }
   
 	public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
