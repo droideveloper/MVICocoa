@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MVICocoa"
-  s.version      = "0.0.1"
+  s.version      = 1.1.2"
   s.summary      = "MVICocoa, is library that implements, Model-View-Intent architecture for iOS framework."
 
   # This description is used to generate tags and improve search results.
