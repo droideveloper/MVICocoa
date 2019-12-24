@@ -27,7 +27,7 @@ public class Value<T> where T: Equatable {
   
   private let subject: BehaviorSubject<T>
   
-  public init(value: T) {
+  public init(_ value: T) {
     self._value = value
     self.subject = BehaviorSubject<T>(value: value)
   }
