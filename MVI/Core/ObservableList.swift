@@ -26,6 +26,8 @@ public class ObservableList<T> where T: Equatable {
     }
   }
   
+  public init() { }
+  
   public func register(_ callback: PropertyChangable) {
     let index = protocols.firstIndex(where: { listener in
       return listener === callback
