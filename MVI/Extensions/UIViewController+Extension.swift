@@ -28,7 +28,7 @@ extension UIViewController {
     }
   }
   
-  open func showError(_ error: Error, _ style: UIAlertController.Style = .actionSheet,  _ completion: (() -> Void)? = nil) {
+  open func showError(_ error: MVIError, _ style: UIAlertController.Style = .actionSheet,  _ completion: (() -> Void)? = nil) {
     let sheetDialog = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: style)
     sheetDialog.addAction(UIAlertAction(title: "OK", style: .destructive, handler: { _ in sheetDialog.dismiss(animated: true, completion: nil) }))
     self.present(sheetDialog, animated: true, completion: completion)
