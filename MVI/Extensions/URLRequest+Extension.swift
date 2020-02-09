@@ -26,7 +26,31 @@ extension URLRequest {
 	
 	public func execute<T>(_ interceptors: [Interceptor]? = nil, _ block: @escaping (MultipartFormData) -> Void) -> Observable<Response<T>> where T: Decodable {
 		let request = self.proceed(interceptors)
-    return Alamofire.request(request)
-			.uploadMultipart(block)
+		return Observable.create { emitter in
+			var disposable: Disposable = Disposables.create()
+			
+			upload(multipartFormData: block, with: request) { result in
+				switch result {
+					case .failure(let error):
+						emitter.onError(error)
+					case .success(let request, _, _):
+						let req = request.serialize(completion: { (response: DataResponse<Response<T>>) in
+							switch response.result {
+								case .success(let data):
+									emitter.onNext(data)
+									emitter.onCompleted()
+								case .failure(let error):
+									emitter.onError(error)
+							}
+						})
+					
+						disposable = Disposables.create {
+							req.cancel()
+						}
+				}
+			}
+			
+			return disposable
+		}
 	}
 }
