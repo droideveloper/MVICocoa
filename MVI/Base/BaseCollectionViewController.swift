@@ -15,8 +15,13 @@ open class BaseCollectionViewController<T: Model, V: ViewModel>: UICollectionVie
 	
   public var viewModel: V!
   
-  private let events = PublishRelay<Event>()
-	public let disposeBag = CompositeDisposeBag()
+	private lazy var events = {
+		return PublishRelay<Event>()
+	}()
+	
+	private lazy var disposeBag = {
+		return CompositeDisposeBag()
+	}()
   
   open override func viewDidLoad() {
     super.viewDidLoad()
