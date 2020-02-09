@@ -57,4 +57,40 @@ extension DataRequest {
       }
     }
   }
+	
+	// have to be in data request because of reasons unknown
+	public func uploadMultipart<T>(_ block: @escaping (MultipartFormData) -> Void) -> Observable<T> where T: Decodable {
+		return Observable.create { emitter in
+			
+			var disposable: Disposable = Disposables.create()
+			
+			guard let urlRequest = self.request else {
+				emitter.onError(MVIError(localizedDescription: "can not locale request", code: -1))
+				return disposable
+			}
+			
+			upload(multipartFormData: block, with: urlRequest) { (result) in
+				switch result {
+					case .failure(let error):
+						emitter.onError(error)
+					case .success(_, _, _):
+
+						let request = self.serialize(completion: { (response: DataResponse<T>) in
+							switch response.result {
+								case .success(let data):
+									emitter.onNext(data)
+									emitter.onCompleted()
+								case .failure(let error):
+									emitter.onError(error)
+							}
+						})
+						
+						disposable = Disposables.create {
+							request.cancel()
+						}
+				}
+			}
+			return disposable
+		}
+	}
 }

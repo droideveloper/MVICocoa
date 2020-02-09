@@ -23,4 +23,10 @@ extension URLRequest {
     return Alamofire.request(request)
       .serialize()
   }
+	
+	public func execute<T>(_ interceptors: [Interceptor]? = nil, _ block: @escaping (MultipartFormData) -> Void) -> Observable<Response<T>> where T: Decodable {
+		let request = self.proceed(interceptors)
+    return Alamofire.request(request)
+			.uploadMultipart(block)
+	}
 }
