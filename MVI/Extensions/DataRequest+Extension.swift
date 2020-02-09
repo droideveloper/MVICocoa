@@ -48,7 +48,6 @@ extension DataRequest {
           case .success(let data):
             emitter.onNext(data)
             emitter.onCompleted()
-            break
           case .failure(let error):
             emitter.onError(error)
         }
