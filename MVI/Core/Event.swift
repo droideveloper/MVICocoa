@@ -18,4 +18,9 @@ open class Event {
   open func toIntent(container: Container?) -> Intent {
     return Event.emptyIntent
   }
+	
+	// default implementation of event payload this will be empty
+	open func payload() -> [String: Any] {
+		return [:]
+	}
 }

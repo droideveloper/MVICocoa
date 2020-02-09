@@ -15,8 +15,13 @@ open class BaseTableViewController<T: Model, V: ViewModel>: UITableViewControlle
 
   public var viewModel: V!
   
-  private let events = PublishRelay<Event>()
-	public let disposeBag = CompositeDisposeBag()
+	private lazy var events = {
+		return PublishRelay<Event>()
+	}()
+	
+	private lazy var disposeBag = {
+		return CompositeDisposeBag()
+	}()
   
   open override func viewDidLoad() {
     super.viewDidLoad()
@@ -40,14 +45,16 @@ open class BaseTableViewController<T: Model, V: ViewModel>: UITableViewControlle
 		disposeBag += viewModel.store()
 			.subscribe(onNext: render(model:))
 		
-		guard let refreshControl = refreshControl else {
+		// we ask for next level of refresh control else we do show error that table view does not have such
+		if let refreshControl = refreshControl {
+			
+			disposeBag += viewModel.state()
+				.map { state in state ~> SyncState.refresh }
+				.subscribe(refreshControl.rx.isRefreshing)
+			
+		} else {
 			log(.error, "\(UIRefreshControl.self) is not available in context")
-			return // we must return if we do not want it to execute
 		}
-		
-		disposeBag += viewModel.state()
-			.map { state in state ~> SyncState.refresh }
-			.subscribe(refreshControl.rx.isRefreshing)
   }
   
   open func render(model: T) { /*no opt*/ }

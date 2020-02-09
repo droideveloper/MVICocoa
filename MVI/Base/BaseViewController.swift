@@ -16,9 +16,14 @@ open class BaseViewController<T: Model, V: ViewModel>: UIViewController where V.
     
   public var viewModel: V!
   
-  private let events = PublishRelay<Event>()
-	public let disposeBag = CompositeDisposeBag()
+	private lazy var events = {
+		return PublishRelay<Event>()
+	}()
 	
+	public lazy var disposeBag = {
+		return CompositeDisposeBag()
+	}()
+		
 	open override func viewDidLoad() {
 		super.viewDidLoad()
 		setUp()

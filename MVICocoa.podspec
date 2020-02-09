@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MVICocoa"
-  s.version      = "0.0.1"
+  s.version      = "2.0.0"
   s.summary      = "MVICocoa, is library that implements, Model-View-Intent architecture for iOS framework."
 
   # This description is used to generate tags and improve search results.
@@ -139,5 +139,6 @@ MVI architecture implementation basic and needs for iOS framework to create vali
   s.dependency "Alamofire"
   s.dependency "AlamofireImage"
   s.dependency "Swinject", "~> 2.6.2"	
+  s.dependency "SwinjectStoryboard", "~> 2.2.0"
 
 end
