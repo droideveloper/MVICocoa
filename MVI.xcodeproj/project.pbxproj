@@ -22,6 +22,7 @@
 		3D0701C62180B13400467028 /* MVI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0701BC2180B13400467028 /* MVI.framework */; };
 		3D0701CB2180B13400467028 /* MVITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0701CA2180B13400467028 /* MVITests.swift */; };
 		3D0701CD2180B13400467028 /* MVI.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D0701BF2180B13400467028 /* MVI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3D0F379223F0985000D13612 /* UploadRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0F379123F0985000D13612 /* UploadRequest+Extension.swift */; };
 		3D11D34A22A2647000E3245E /* Requestable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11D34922A2647000E3245E /* Requestable+Extensions.swift */; };
 		3D11D34C22A2654100E3245E /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11D34B22A2654100E3245E /* HttpMethod.swift */; };
 		3D11D34E22A26A3000E3245E /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11D34D22A26A3000E3245E /* Array+Extensions.swift */; };
@@ -95,6 +96,7 @@
 		3D0701C52180B13400467028 /* MVITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D0701CA2180B13400467028 /* MVITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVITests.swift; sourceTree = "<group>"; };
 		3D0701CC2180B13400467028 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D0F379123F0985000D13612 /* UploadRequest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UploadRequest+Extension.swift"; sourceTree = "<group>"; };
 		3D11D34922A2647000E3245E /* Requestable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Requestable+Extensions.swift"; sourceTree = "<group>"; };
 		3D11D34B22A2654100E3245E /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		3D11D34D22A26A3000E3245E /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				3D156E5222990AD70089DC83 /* ObservableType+Extension.swift */,
 				3D11D34922A2647000E3245E /* Requestable+Extensions.swift */,
 				3D11D34D22A26A3000E3245E /* Array+Extensions.swift */,
+				3D0F379123F0985000D13612 /* UploadRequest+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				3D013E9921821D5A00D1F063 /* PropertyChangable.swift in Sources */,
 				3D11D34C22A2654100E3245E /* HttpMethod.swift in Sources */,
 				3DDC9F7021B6F3A2006DFACD /* UITableView+Register.swift in Sources */,
+				3D0F379223F0985000D13612 /* UploadRequest+Extension.swift in Sources */,
 				3D013E4E2181BC2B00D1F063 /* UIViewController+Extension.swift in Sources */,
 				3DDC9F7221B6F483006DFACD /* UICollectionView+Register.swift in Sources */,
 				3D9B8D822180B33E00DF7C6B /* Event.swift in Sources */,
