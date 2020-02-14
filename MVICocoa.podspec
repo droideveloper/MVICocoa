@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
 MVI architecture implementation basic and needs for iOS framework to create valid applications for swift 4.2
                    DESC
 
-  s.homepage     = "http://EXAMPLE/MVICocoa"
+  s.homepage     = "https://github.com/droideveloper/MVICocoa"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
