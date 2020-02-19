@@ -8,27 +8,27 @@
 
 import Foundation
 
-extension Int32 {
+public extension Int32 {
 	
-   public var alpha: Int {
+  var alpha: Int {
     get {
       return Int(self >> 24) & 0xFF
     }
 	}
 	
-  public var red: Int {
+  var red: Int {
     get {
       return Int(self >> 16) & 0xFF
     }
 	}
 	
-  public var green: Int {
+  var green: Int {
     get {
       return Int(self >> 8) & 0xFF
     }
 	}
 	
-  public var blue: Int {
+  var blue: Int {
     get {
       return Int(self) & 0xFF
     }

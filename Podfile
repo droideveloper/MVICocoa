@@ -9,7 +9,8 @@ target 'MVI' do
     pod 'RxCocoa'
     pod 'Alamofire'
     pod 'AlamofireImage'
-    pod 'Swinject'	
+		pod "Swinject", "~> 2.6.2"
+		pod 'SwinjectStoryboard'
 
   # Pods for MVI
 

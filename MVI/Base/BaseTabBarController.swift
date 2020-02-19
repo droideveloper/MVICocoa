@@ -15,8 +15,13 @@ open class BaseTabBarController<T: Model, V: ViewModel>: UITabBarController wher
 	
 	public var viewModel: V!
 	
-	private let events = PublishRelay<Event>()
-	public let disposeBag = CompositeDisposeBag()
+	private lazy var events = {
+		return PublishRelay<Event>()
+	}()
+	
+	private lazy var disposeBag = {
+		return CompositeDisposeBag()
+	}()
 	
 	open override func viewDidLoad() {
 		super.viewDidLoad()

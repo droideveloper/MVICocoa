@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MVICocoa"
-  s.version      = "0.0.1"
+  s.version      = "2.0.0"
   s.summary      = "MVICocoa, is library that implements, Model-View-Intent architecture for iOS framework."
 
   # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
 MVI architecture implementation basic and needs for iOS framework to create valid applications for swift 4.2
                    DESC
 
-  s.homepage     = "http://EXAMPLE/MVICocoa"
+  s.homepage     = "https://github.com/droideveloper/MVICocoa"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -138,6 +138,7 @@ MVI architecture implementation basic and needs for iOS framework to create vali
   s.dependency "RxCocoa"
   s.dependency "Alamofire"
   s.dependency "AlamofireImage"
-  s.dependency "Swinject"	
+  s.dependency "Swinject", "~> 2.6.2"	
+  s.dependency "SwinjectStoryboard"
 
 end

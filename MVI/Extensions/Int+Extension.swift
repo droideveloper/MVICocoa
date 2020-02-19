@@ -8,33 +8,33 @@
 
 import Foundation
 
-extension Int {
+public extension Int {
 	
-  public var colorChannel: CGFloat {
+  var colorChannel: CGFloat {
     get {
       return CGFloat(self) / 255.0
     }
 	}
 	
-  public var alpha: Int {
+  var alpha: Int {
     get {
       return (self >> 24) & 0xFF
     }
 	}
 	
-  public var red: Int {
+  var red: Int {
     get {
       return (self >> 16) & 0xFF
     }
 	}
 	
-  public var green: Int {
+  var green: Int {
     get {
       return (self >> 8) & 0xFF
     }
 	}
 	
-  public var blue: Int {
+  var blue: Int {
     get {
       return self & 0xFF
     }

@@ -16,8 +16,11 @@ open class BaseViewModel<T: Model>: ViewModel {
 
 	private let concurrency: Concurrency
 
-  private let intents = PublishRelay<Intent>()
-  private lazy var storage = {
+	private lazy var intents = {
+		return PublishRelay<Intent>()
+	}()
+	
+	private lazy var storage = {
     return intents.asObservable()
       .toReducer()
       .scan(initialState(), accumulator: { o, reducer in reducer(o) })
