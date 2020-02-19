@@ -9,7 +9,7 @@
 ## Using Cocoa Pods
 
 ```sh
-pod 'MVICocoa', :git => "https://github.com/droideveloper/MVICocoa.git", :branch => "release/2.1.0"
+pod 'MVICocoa', :git => "https://github.com/droideveloper/MVICocoa.git", :branch => "release/2.1.1"
 ```
 
 for different versions you can change branch
