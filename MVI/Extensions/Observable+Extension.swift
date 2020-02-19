@@ -9,9 +9,9 @@
 import Foundation
 import RxSwift
 
-extension Observable {
+public extension Observable {
   
-  public func async() -> Observable<Element> {
+  func async() -> Observable<Element> {
     return self.subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .userInitiated))
       .observeOn(MainScheduler.instance)
   }

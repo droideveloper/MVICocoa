@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
 MVI architecture implementation basic and needs for iOS framework to create valid applications for swift 4.2
                    DESC
 
-  s.homepage     = "http://EXAMPLE/MVICocoa"
+  s.homepage     = "https://github.com/droideveloper/MVICocoa"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -139,6 +139,6 @@ MVI architecture implementation basic and needs for iOS framework to create vali
   s.dependency "Alamofire"
   s.dependency "AlamofireImage"
   s.dependency "Swinject", "~> 2.6.2"	
-  s.dependency "SwinjectStoryboard", "~> 2.2.0"
+  s.dependency "SwinjectStoryboard"
 
 end

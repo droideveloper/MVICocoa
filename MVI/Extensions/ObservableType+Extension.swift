@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-extension ObservableType {
+public extension ObservableType {
 	
 	func onErrorRetry(with max: Int = 3, and delay: Int = 3) -> Observable<Element> {
 		return retryWhen { (errors: Observable<Error>) in

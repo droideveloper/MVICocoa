@@ -18,10 +18,10 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - Swinject (~> 2.6.2)
-  - SwinjectStoryboard (~> 2.2.0)
+  - SwinjectStoryboard
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
     - AlamofireImage
     - RxCocoa
@@ -39,6 +39,6 @@ SPEC CHECKSUMS:
   Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
   SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
 
-PODFILE CHECKSUM: e6f5f221abf9b09e6a6649d18b108afff73f9d73
+PODFILE CHECKSUM: 02b67604d839ae67f5fd851acb2558deec081aa7
 
-COCOAPODS: 1.7.1
+COCOAPODS: 1.8.4

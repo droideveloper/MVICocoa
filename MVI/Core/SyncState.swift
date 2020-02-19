@@ -35,8 +35,8 @@ public enum SyncState: CustomStringConvertible, Equatable {
 		get {
 			switch self {
 				case .idle: return "idle"
-				case .failure(let error): return "\(error.localizedDescription)"
-				case .operation(let type, let state): return "\(type), \(state)"
+				case .failure(let error): return "error: \(error.localizedDescription)"
+				case .operation(let type, let state): return "op: \(type) with: \(state)"
 			}
 		}
 	}

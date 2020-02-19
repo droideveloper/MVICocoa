@@ -9,9 +9,9 @@
 import Foundation
 import RxSwift
 
-extension ReducerIntent {
+public extension ReducerIntent {
   
-  public func toObservableIntent() -> Observable<Reducer<T>> {
+  func toObservableIntent() -> Observable<Reducer<T>> {
     return Observable.of(self.invoke())
   }
 }
