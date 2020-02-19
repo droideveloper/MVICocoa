@@ -9,9 +9,9 @@
 import Foundation
 import RxSwift
 
-extension Observable where Element == Intent {
+public extension Observable where Element == Intent {
   
-  public func toReducer<T>() -> Observable<Reducer<T>> {
+  func toReducer<T>() -> Observable<Reducer<T>> {
     return self.concatMap { intent -> Observable<Reducer<T>> in
       if let intent = intent as? ReducerIntent<T> {
         return intent.toObservableIntent()

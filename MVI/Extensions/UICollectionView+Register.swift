@@ -9,31 +9,31 @@
 import Foundation
 import UIKit
 
-extension UICollectionView {
+public extension UICollectionView {
 	
-	public func register<A>(_ type: A.Type) where A: UICollectionViewCell {
+	func register<A>(_ type: A.Type) where A: UICollectionViewCell {
 		register(type: type)
 	}
 	
-	public func register<A, B>(_ typeA: A.Type, _ typeB: B.Type) where A: UICollectionViewCell, B: UICollectionViewCell {
+	func register<A, B>(_ typeA: A.Type, _ typeB: B.Type) where A: UICollectionViewCell, B: UICollectionViewCell {
 		register(type: typeA)
 		register(type: typeB)
 	}
 	
-	public func register<A, B, C>(_ typeA: A.Type, _ typeB: B.Type, _ typeC: C.Type) where A: UICollectionViewCell, B: UICollectionViewCell, C: UICollectionViewCell {
+	func register<A, B, C>(_ typeA: A.Type, _ typeB: B.Type, _ typeC: C.Type) where A: UICollectionViewCell, B: UICollectionViewCell, C: UICollectionViewCell {
 		register(type: typeA)
 		register(type: typeB)
 		register(type: typeC)
 	}
 	
-	public func register<A, B, C, D>(_ typeA: A.Type, _ typeB: B.Type, _ typeC: C.Type, _ typeD: D.Type) where A: UICollectionViewCell, B: UICollectionViewCell, C: UICollectionViewCell, D: UICollectionViewCell  {
+	func register<A, B, C, D>(_ typeA: A.Type, _ typeB: B.Type, _ typeC: C.Type, _ typeD: D.Type) where A: UICollectionViewCell, B: UICollectionViewCell, C: UICollectionViewCell, D: UICollectionViewCell  {
 		register(type: typeA)
 		register(type: typeB)
 		register(type: typeC)
 		register(type: typeD)
 	}
 	
-	public func register<A, B, C, D, E>(_ typeA: A.Type, _ typeB: B.Type, _ typeC: C.Type, _ typeD: D.Type, _ typeE: E.Type) where A: UICollectionViewCell, B: UICollectionViewCell, C: UICollectionViewCell, D: UICollectionViewCell, E: UICollectionViewCell  {
+	func register<A, B, C, D, E>(_ typeA: A.Type, _ typeB: B.Type, _ typeC: C.Type, _ typeD: D.Type, _ typeE: E.Type) where A: UICollectionViewCell, B: UICollectionViewCell, C: UICollectionViewCell, D: UICollectionViewCell, E: UICollectionViewCell  {
 		register(type: typeA)
 		register(type: typeB)
 		register(type: typeC)
@@ -41,7 +41,7 @@ extension UICollectionView {
 		register(type: typeE)
 	}
 	
-	public func register<A, B, C, D, E, F>(_ typeA: A.Type, _ typeB: B.Type, _ typeC: C.Type, _ typeD: D.Type, _ typeE: E.Type, _ typeF: F.Type) where A: UICollectionViewCell, B: UICollectionViewCell, C: UICollectionViewCell, D: UICollectionViewCell, E: UICollectionViewCell, F: UICollectionViewCell    {
+	func register<A, B, C, D, E, F>(_ typeA: A.Type, _ typeB: B.Type, _ typeC: C.Type, _ typeD: D.Type, _ typeE: E.Type, _ typeF: F.Type) where A: UICollectionViewCell, B: UICollectionViewCell, C: UICollectionViewCell, D: UICollectionViewCell, E: UICollectionViewCell, F: UICollectionViewCell    {
 		register(type: typeA)
 		register(type: typeB)
 		register(type: typeC)

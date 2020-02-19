@@ -17,10 +17,14 @@ public class ViewFactoryImp: ViewFactory {
 		self.delegate = delegate
 	}
 	
-	public func create<T>(_ storyboardName: String?, _ type: T.Type) -> T where T : UIViewController {
+	public func create<T>(_ storyboardName: String, _ type: T.Type) -> T where T: UIViewController {
 		guard let delegate = delegate else {
 			fatalError("delegate is not bound")
 		}
-		return delegate.instantiateFromStoryboardHelper(storyboardName ?? "Main", type: type)
+		return delegate.instantiateFromStoryboardHelper(storyboardName, type: type)
+	}
+	
+	public func create<T>(_ type: T.Type) -> T where T: UIViewController {
+		return create("Main", type)
 	}
 }

@@ -10,9 +10,9 @@ import Foundation
 import RxSwift
 import Swinject
 
-extension Observable where Element == Event {
+public extension Observable where Element == Event {
   
-  public func toIntent(_ container: Container?) -> Observable<Intent> {
+  func toIntent(_ container: Container?) -> Observable<Intent> {
     return self.map { event -> Intent in
       return event.toIntent(container: container)
     }

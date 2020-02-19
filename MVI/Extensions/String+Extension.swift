@@ -8,8 +8,10 @@
 
 import Foundation
 
-extension String {
+public extension String {
 	
-	public static let empty = ""
+	static let empty = ""
+	static let newLine = "\n"
+	static let tab = "\t"
 
 }

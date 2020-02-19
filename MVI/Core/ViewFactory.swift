@@ -10,5 +10,6 @@ import Foundation
 
 public protocol ViewFactory {
 	
-	func create<T>(_ storyboardName: String?, _ type: T.Type) -> T where T: UIViewController
+	func create<T>(_ storyboardName: String, _ type: T.Type) -> T where T: UIViewController
+	func create<T>(_ type: T.Type) -> T where T: UIViewController
 }
