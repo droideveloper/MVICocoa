@@ -66,7 +66,6 @@
 		3DE4177723F714C2006D620B /* URLRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE4177623F714C2006D620B /* URLRequest+Extension.swift */; };
 		3DE4177923F7155F006D620B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE4177823F7155F006D620B /* Response.swift */; };
 		3DFF871E2311362D00910755 /* Concurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF871D2311362D00910755 /* Concurrency.swift */; };
-		3DFF87202311364300910755 /* ConcurrencyImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF871F2311364300910755 /* ConcurrencyImp.swift */; };
 		B376220C004A7D5051571AC3 /* Pods_MVI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB096F379AD3EE27723196F /* Pods_MVI.framework */; };
 /* End PBXBuildFile section */
 
@@ -143,7 +142,6 @@
 		3DE4177623F714C2006D620B /* URLRequest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extension.swift"; sourceTree = "<group>"; };
 		3DE4177823F7155F006D620B /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		3DFF871D2311362D00910755 /* Concurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concurrency.swift; sourceTree = "<group>"; };
-		3DFF871F2311364300910755 /* ConcurrencyImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrencyImp.swift; sourceTree = "<group>"; };
 		7A7CF3612E813103A6285A1E /* Pods-MVI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVI/Pods-MVI.debug.xcconfig"; sourceTree = "<group>"; };
 		87A76E2CAE2D90E0C4A61187 /* Pods-MVI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVI.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVI/Pods-MVI.release.xcconfig"; sourceTree = "<group>"; };
 		91F93BBD6807D8DC996EB40F /* Pods-MVITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVITests/Pods-MVITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -301,7 +299,7 @@
 				3DDA0F912310672500981F46 /* SpinLock.swift */,
 				3DDA0F93231067AD00981F46 /* AtomicProperty.swift */,
 				3DFF871D2311362D00910755 /* Concurrency.swift */,
-				3DFF871F2311364300910755 /* ConcurrencyImp.swift */,
+				3D70A0E9237E8E0B001529BA /* Variable.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -535,6 +533,7 @@
 				3D9B8D842180B3DD00DF7C6B /* BusManager.swift in Sources */,
 				3D9B8D942180BA3A00DF7C6B /* Intent+Extension.swift in Sources */,
 				3DB99A1F21A1FCBA00ADBAE4 /* Logable.swift in Sources */,
+				3D70A0EA237E8E0B001529BA /* Variable.swift in Sources */,
 				3D05C4BA21B31C7F0062737F /* TableDataSource.swift in Sources */,
 				3D05C4BC21B31D200062737F /* CollectionDataSource.swift in Sources */,
 				3D466FCF2229EE11008BAE21 /* Interceptor.swift in Sources */,

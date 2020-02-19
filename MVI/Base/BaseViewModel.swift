@@ -30,8 +30,8 @@ open class BaseViewModel<T: Model>: ViewModel {
   
   public let disposeBag = CompositeDisposeBag()
   
-  public init() {
-		self.concurrency = ConcurrencyImp.shared
+	public init(concurrency: Concurrency) {
+		self.concurrency = concurrency
 	}
 	
 	open func initialState() -> T {
