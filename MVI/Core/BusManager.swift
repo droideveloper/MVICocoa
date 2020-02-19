@@ -11,8 +11,10 @@ import RxSwift
 
 public class BusManager {
   
-  private static let bus = PublishSubject<Event>()
-  
+	private static var bus = {
+		PublishSubject<Event>()
+	}()
+	
   public static func send<T>(event: T) where T: Event {
     bus.onNext(event)
   }
