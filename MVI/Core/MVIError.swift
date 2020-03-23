@@ -10,8 +10,8 @@ import Foundation
 
 public struct MVIError: Error, CustomStringConvertible {
 	
-	let localizedDescription: String
-	let code: Int
+	public let localizedDescription: String
+	public let code: Int
 
 	public static func of(description string: String, with code: Int = -1) -> MVIError {
 		return MVIError(localizedDescription: string, code: code)
