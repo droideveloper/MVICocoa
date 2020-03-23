@@ -65,7 +65,7 @@ MVI architecture implementation basic and needs for iOS framework to create vali
   #
 
   # s.platform     = :ios
-  s.platform     = :ios, "10.0"
+  s.platform     = :ios, "8.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -136,8 +136,8 @@ MVI architecture implementation basic and needs for iOS framework to create vali
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   s.dependency "RxSwift"
   s.dependency "RxCocoa"
-  s.dependency "Alamofire"
-  s.dependency "AlamofireImage"
+  s.dependency "Alamofire", "~> 4.0"
+  s.dependency "AlamofireImage", "~> 4.0"
   s.dependency "Swinject", "~> 2.6.2"	
 
 end
