@@ -19,7 +19,7 @@ public struct MVIError: Error, CustomStringConvertible {
 	
 	public var description: String {
 		get {
-			return "code: \(code) description: \(localizedDescription)"
+			return localizedDescription
 		}
 	}
 }
