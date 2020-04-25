@@ -11,14 +11,14 @@ import RxSwift
 
 extension ObservableType {
 	
-	public func onErrorRetry(with max: Int = 3, and delay: Int = 3) -> Observable<Element> {
+	public func onErrorRetry(with max: Int = 3, and delay: Int = 3) -> Observable<E> {
 		return retryWhen { (errors: Observable<Error>) in
 			return Observable.zip(errors, Observable<Int>.range(start: 0, count: max)) { _, index in return index }
 				.map { t in	return DispatchTimeInterval.seconds(delay * t) }
 		}
 	}
   
-  public func applyResources<T>() -> Observable<Resource<T>> where T: Codable, Element == Response<T> {
+  public func applyResources<T>() -> Observable<Resource<T>> where T: Codable, E == Response<T> {
     return map { response -> Resource<T> in
       if response.code ?? -1 >= 200, response.code ?? -1 <= 299 {
         return .success(response.code, response.data, response.cursor)
