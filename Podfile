@@ -5,12 +5,12 @@ target 'MVI' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-    pod 'RxSwift'
-    pod 'RxCocoa'
-    pod 'Alamofire'
-    pod 'AlamofireImage'
-		pod "Swinject", "~> 2.6.2"
-		pod 'SwinjectStoryboard'
+    pod 'RxSwift', "~> 4.5"
+    pod 'RxCocoa', "~> 4.5"
+    pod 'Alamofire', "~> 4.0"
+    pod 'AlamofireImage', "~> 3.0"
+	pod "Swinject", "~> 2.6.2"
+	pod 'SwinjectStoryboard'
 
   # Pods for MVI
 

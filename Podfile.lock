@@ -2,21 +2,18 @@ PODS:
   - Alamofire (4.9.1)
   - AlamofireImage (3.6.0):
     - Alamofire (~> 4.9)
-  - RxCocoa (5.0.1):
-    - RxRelay (~> 5)
-    - RxSwift (~> 5)
-  - RxRelay (5.0.1):
-    - RxSwift (~> 5)
-  - RxSwift (5.0.1)
+  - RxCocoa (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxSwift (4.5.0)
   - Swinject (2.6.2)
   - SwinjectStoryboard (2.2.0):
     - Swinject (~> 2.6)
 
 DEPENDENCIES:
-  - Alamofire
-  - AlamofireImage
-  - RxCocoa
-  - RxSwift
+  - Alamofire (~> 4.0)
+  - AlamofireImage (~> 3.0)
+  - RxCocoa (~> 4.5)
+  - RxSwift (~> 4.5)
   - Swinject (~> 2.6.2)
   - SwinjectStoryboard
 
@@ -25,7 +22,6 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - RxCocoa
-    - RxRelay
     - RxSwift
     - Swinject
     - SwinjectStoryboard
@@ -33,12 +29,11 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
-  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
-  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
-  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
   SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
 
-PODFILE CHECKSUM: 02b67604d839ae67f5fd851acb2558deec081aa7
+PODFILE CHECKSUM: 5a284c6945e26ce3db23780ad27a41c06d3e6bed
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1
