@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MVICocoa"
-  s.version      = "1.1.2"
+  s.version      = "2.0.0"
   s.summary      = "MVICocoa, is library that implements, Model-View-Intent architecture for iOS framework."
 
   # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-MVI architecture implementation basic and needs for iOS framework to create valid applications for swift 4.2
+MVI architecture implementation basic and needs for iOS framework to create valid applications for swift 5.0
                    DESC
 
   s.homepage     = "https://github.com/droideveloper/MVICocoa"
@@ -134,11 +134,10 @@ MVI architecture implementation basic and needs for iOS framework to create vali
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  s.dependency "RxSwift", "~> 4.5"
-  s.dependency "RxCocoa" "~> 4.5"
-  s.dependency "Alamofire", "~> 4.0"
+  s.dependency "RxSwift", "~> 5"
+  s.dependency "RxCocoa" "~> 5"
+  s.dependency "Alamofire", "~> 4.2"
   s.dependency "AlamofireImage", "~> 3.0"
   s.dependency "Swinject", "~> 2.6.2"	
   s.dependency "SwinjectStoryboard"
-
 end
