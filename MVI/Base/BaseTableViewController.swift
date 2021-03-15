@@ -19,7 +19,7 @@ open class BaseTableViewController<T: Model, V: ViewModel>: UITableViewControlle
 		return PublishRelay<Event>()
 	}()
 	
-	private lazy var disposeBag = {
+	public lazy var disposeBag = {
 		return CompositeDisposeBag()
 	}()
   

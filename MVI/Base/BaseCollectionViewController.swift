@@ -19,7 +19,7 @@ open class BaseCollectionViewController<T: Model, V: ViewModel>: UICollectionVie
 		return PublishRelay<Event>()
 	}()
 	
-	private lazy var disposeBag = {
+	public lazy var disposeBag = {
 		return CompositeDisposeBag()
 	}()
   

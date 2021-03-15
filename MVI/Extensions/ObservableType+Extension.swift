@@ -11,7 +11,7 @@ import RxSwift
 
 public extension ObservableType {
 	
-	func onErrorRetry(with max: Int = 3, and delay: Int = 3) -> Observable<E> {
+	func onErrorRetry(with max: Int = 3, and delay: Int = 3) -> Observable<Element> {
 		return retryWhen { (errors: Observable<Error>) in
 			return Observable.zip(errors, Observable<Int>.range(start: 0, count: max)) { _, index in return index }
 				.map { t in	return DispatchTimeInterval.seconds(delay * t) }

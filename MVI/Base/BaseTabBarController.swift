@@ -19,7 +19,7 @@ open class BaseTabBarController<T: Model, V: ViewModel>: UITabBarController wher
 		return PublishRelay<Event>()
 	}()
 	
-	private lazy var disposeBag = {
+	public lazy var disposeBag = {
 		return CompositeDisposeBag()
 	}()
 	
